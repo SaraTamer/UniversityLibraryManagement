@@ -1,5 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 public class DatabaseConnection {
     private static final String URL = "jdbc:sqlserver://192.168.1.47:1433;database=UniversityLibraryManagement;encrypt=true;trustservercertificate=true";
@@ -27,3 +26,4 @@ public class DatabaseConnection {
         return connection;
     }
 }
+
