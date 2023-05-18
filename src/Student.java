@@ -24,7 +24,7 @@ public class Student {
     }
     public void editName(int id, String newName)
     {
-        String query = "update testTable set name = ? where id = ?";
+        String query = "update student set FirstName = ? where S_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
