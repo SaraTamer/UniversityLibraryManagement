@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 public class Authentication {
     Connection connection = null;
     PreparedStatement ps = null;
-    CallableStatement callableStatement = null;
-    ResultSet resultSet = null;
 
     public void InsertUser(int id, String fName, String lName, String city, String street, String pNum, String gender, String dep) {
         String query = "insert into Student (S_ID,FirstName, LastName, City, Street, PhoneNumber, Gender, Department) values(?, ?, ?, ? , ? ,?, ? , ?)";

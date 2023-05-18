@@ -12,14 +12,8 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="95a4ea7c-2f99-4cb1-b218-f7bad160e9fd">
-      <console name="Connection 1" type="STANDARD" schema="database" session="Main"><![CDATA[insert into Book (ISBN, title, category, language, edition, publishingYear)
-values (111, 'Romeo and Juliet', 'Romance', 'English', '1.1', '1960')
-
-
-select * from student
-
-select * from book where ISBN = 111]]></console>
+    <connection id="eda1cd6e-ed61-450d-8d21-68f9f8064bcd">
+      <console name="Connection" type="STANDARD" schema="uni" session="Main"><![CDATA[select * from student]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -45,20 +39,23 @@ select * from book where ISBN = 111]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="95a4ea7c-2f99-4cb1-b218-f7bad160e9fd" active="true" signed="true">
+      <connection id="eda1cd6e-ed61-450d-8d21-68f9f8064bcd" active="true" signed="true">
         <database>
-          <name value="Connection 1" />
+          <name value="Connection" />
           <description value="" />
-          <database-type value="GENERIC" />
-          <config-type value="CUSTOM" />
-          <database-version value="16.0" />
-          <driver-source value="EXTERNAL" />
-          <driver-library value="C:\Users\Apex\IdeaProjects\UniversityLibraryManagement\lib" />
-          <driver value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-          <url value="jdbc:sqlserver://192.168.1.47:1433;database=UniversityLibraryManagement;encrypt=true;trustservercertificate=true" />
+          <database-type value="MYSQL" />
+          <config-type value="BASIC" />
+          <database-version value="8.0" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="3306" />
+          <database value="mysql" />
           <type value="USER_PASSWORD" />
-          <user value="LibraryAdmin" />
-          <deprecated-pwd value="MTM1Nzk=" />
+          <user value="root" />
+          <deprecated-pwd value="MTIzNA==" />
         </database>
         <properties>
           <auto-commit value="false" />
