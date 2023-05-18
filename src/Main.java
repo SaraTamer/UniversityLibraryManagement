@@ -10,5 +10,6 @@ public class Main {
 //        i.InsertStudent(stud);
 //        stud.editName(1,"sjfdjf");
 
+//        InsertUser(1, "sara" , "tamer", "cairo", "haram", "012222222", "female", "it");
     }
 }
