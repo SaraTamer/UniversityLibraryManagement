@@ -34,11 +34,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student first name updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student first name not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editfName(): " + e.getMessage());
         }
     }
     public void editlName(int id, String newName)
@@ -54,11 +54,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student last name updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student last name not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editlName(): " + e.getMessage());
         }
     }
     public void editCity(int id, String newCity)
@@ -74,11 +74,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student city updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student city not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editCity(): " + e.getMessage());
         }
     }
     public void editPhone(int id, String newPhone)
@@ -94,11 +94,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student phone updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student phone number not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editPhone(): " + e.getMessage());
         }
     }
     public void editStreet(int id, String newStreet)
@@ -114,11 +114,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student street updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student street not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editStreet(): " + e.getMessage());
         }
     }
     public void editDep(int id, String newDep)
@@ -134,11 +134,11 @@ public class Student {
             if (rowsAffected > 0) {
                 System.out.println("Student department updated successfully.");
             } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                System.out.println("No rows were affected. Student department not found or not modified.");
             }
         }
         catch (Exception e) {
-            System.out.println("com.Models.user.updateStudent(): " + e.getMessage());
+            System.out.println("com.Models.Student.editDep(): " + e.getMessage());
         }
     }
 
