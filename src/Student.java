@@ -8,10 +8,12 @@ public class Student {
     String phoneNum;
     String Gender;
     String Department;
+    String Password;
     int ID;
     int ACC_ID;
 
-    Student(int id,String fname,String lname,String city,String street,String PhoneNum,String gender,String dep,int AccID){
+    Student(int id,String fname,String lname,String city,String street,
+            String PhoneNum,String gender,String dep,int AccID,String pass){
         firstName = fname;
         lastName = lname;
         Street = street;
@@ -21,7 +23,76 @@ public class Student {
         ID = id;
         ACC_ID = AccID;
         Department = dep;
+        Password = pass;
     }
+    //setters
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public void setStreet(String street) {
+        Street = street;
+    }
+    public void setCity(String city) {
+        City = city;
+    }
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+    public void setACC_ID(int ACC_ID) {
+        this.ACC_ID = ACC_ID;
+    }
+
+    public void setDepartment(String department) {
+        Department = department;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    //gitters
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public String getStreet() {
+        return Street;
+    }
+    public String getCity() {
+        return City;
+    }
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+    public String getDepartment() {
+        return Department;
+    }
+    public String getPassword() {
+        return Password;
+    }
+    public int getID() {
+        return ID;
+    }
+    public int getACC_ID() {
+        return ACC_ID;
+    }
+
     public void editName(int id, String newName)
     {
         String query = "update student set FirstName = ? where S_ID = ?";

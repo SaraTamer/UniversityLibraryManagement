@@ -7,22 +7,70 @@ public class Authentication {
     Connection connection = null;
     PreparedStatement ps = null;
 
-    public void InsertUser(int id, String fName, String lName, String city, String street, String pNum, String gender, String dep) {
+
+    public void InsertStudent(Student student) {
         String query = "insert into Student (S_ID,FirstName, LastName, City, Street, PhoneNumber, Gender, Department) values(?, ?, ?, ? , ? ,?, ? , ?)";
         try {
             connection = DatabaseConnection.getConnection();
             ps = connection.prepareStatement(query);
-            ps.setInt(1, id);
-            ps.setString(2, fName);
-            ps.setString(3, lName);
-            ps.setString(4, city);
-            ps.setString(5, street);
-            ps.setString(6, pNum);
-            ps.setString(7, gender);
-            ps.setString(8, dep);
+            ps.setInt(1, student.getID());
+            ps.setString(2, student.getFirstName());
+            ps.setString(3, student.getLastName());
+            ps.setString(4, student.getCity());
+            ps.setString(5, student.getStreet());
+            ps.setString(6, student.getPhoneNum());
+            ps.setString(7, student.getGender());
+            ps.setString(8, student.getDepartment());
             ps.executeUpdate();
         } catch (Exception e) {
-            System.out.println("com.Models.user.Insertuser()" + e.getMessage());
+            System.out.println("com.Models.user.InsertStudent()" + e.getMessage());
+        }
+    }
+
+    public void InsertAdmin(Admin admin) {
+        String query = "insert into Student (S_ID,FirstName, LastName, City, Street, PhoneNumber, Gender, Department) values(?, ?, ?, ? , ? ,?, ? , ?)";
+        try {
+            connection = DatabaseConnection.getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, admin.getID());
+            ps.setString(2, admin.getFirstName());
+            ps.setString(3, admin.getLastName());
+            ps.setString(4, admin.getCity());
+            ps.setString(5, admin.getStreet());
+            ps.setString(6, admin.getPhoneNum());
+            ps.setString(7, admin.getGender());
+            ps.setString(8, admin.getRole());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("com.Models.user.InsertAdmin()" + e.getMessage());
+        }
+    }
+
+    public void InsertStudentAccount(Student student) {
+        String query = "insert into Account (ACC_ID,Email,Password) values(?, ?, ?)";
+        try {
+            connection = DatabaseConnection.getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, student.getACC_ID());
+            ps.setInt(2, student.getID());
+            ps.setString(3, student.getPassword());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("com.Models.user.InsertStudentAccount()" + e.getMessage());
+        }
+    }
+
+    public void InsertAdminAccount(Admin admin) {
+        String query = "insert into Account (ACC_ID,Password,Role) values(?, ?, ?)";
+        try {
+            connection = DatabaseConnection.getConnection();
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, admin.getACC_ID());
+            ps.setString(2, admin.getPassword());
+            ps.setInt(3, admin.getID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("com.Models.user.InsertAdminAccount()" + e.getMessage());
         }
     }
 }
