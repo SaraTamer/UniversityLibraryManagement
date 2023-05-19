@@ -20,18 +20,37 @@ public class Book {
         this.Edition = Edition;
         this.publishingYear = publishingYear;
     }
+
+
+    //check if the book is already exist in the database by ISBN
+    public boolean checkBook(int ISBN){
+        String query = "select * from book where ISBN = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1, ISBN);
+            ps.executeQuery();
+        } catch (Exception e) {
+            System.out.println("com.Models.user.Book is already exist " + e.getMessage());
+        }
+        return false;
+    }
     //add new book to the database table book
     public void addNewBook(int ISBN,String title,String Category,String languge,String Edition,String publisingYear){
+        boolean check = false;
         String query = "insert into book values(?,?,?,?,?,?)";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, ISBN);
-            ps.setString(2, title);
-            ps.setString(3, Category);
-            ps.setString(4, languge);
-            ps.setString(5, Edition);
-            ps.setString(6, publisingYear);
+            if (!checkBook(ISBN)) {
+
+                ps.setString(2, title);
+                ps.setString(3, Category);
+                ps.setString(4, languge);
+                ps.setString(5, Edition);
+                ps.setString(6, publisingYear);
+            }
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("com.Models.user.Insertuser()" + e.getMessage());
@@ -106,5 +125,51 @@ public class Book {
     }
 
 
+    public int getISBN() {
+        return ISBN;
+    }
 
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getEdition() {
+        return Edition;
+    }
+
+    public void setEdition(String edition) {
+        Edition = edition;
+    }
+
+    public String getPublishingYear() {
+        return publishingYear;
+    }
+
+    public void setPublishingYear(String publishingYear) {
+        this.publishingYear = publishingYear;
+    }
 }

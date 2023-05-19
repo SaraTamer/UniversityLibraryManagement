@@ -19,13 +19,18 @@ public class Main {
 //
 //        book.updateBookTitle(1234567890, "LM");
 //        book.updateBookCategory(1234567890, "IS");
-//        book.updateBookLanguge(1234567890, "french");
+//        book.updateBookLanguage(1234567890, "french");
 //        book.updateBookEdition(1234567890, "8");
 //        book.updateBookPublisingYear(1234567890, "2009");
-
+//
 //        Book book1 = new Book();
 //        book1.addNewBook(1234567891, "How to make soup", "Kichen", "English", "1", "2023");
 //        book1.updateBookTitle(1234567891, " soup");
 //        book1.updateBookCategory(1234567891, "marketing");
+//
+//        Book book2 = new Book();
+//        book2.addNewBook(1234567892, "How to make soup", "Kichen", "English", "1", "2023");
+//        book2.addNewBook(1234567892, "How to make soup", "Kichen", "English", "1", "2021");
+
     }
 }
