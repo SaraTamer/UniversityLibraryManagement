@@ -146,6 +146,26 @@ public class Admin {
             System.out.println("com.Models.Admin.editRole(): " + e.getMessage());
         }
     }
+    public void editPass ( int acc_id, String newPass)
+    {
+        if(!RegistrationSystem.isValidPassword(newPass))return;
+        String query = "update account set Password = ? where ACC_ID = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, newPass);
+            ps.setInt(2, acc_id);
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Admin password updated successfully.");
+            } else {
+                System.out.println("No rows were affected. Admin password not found or not modified.");
+            }
+        } catch (Exception e) {
+            System.out.println("com.Models.Admin.editPass(): " + e.getMessage());
+        }
+    }
 
 
     //gitters

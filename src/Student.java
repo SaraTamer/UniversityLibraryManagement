@@ -153,6 +153,7 @@ public class Student {
         }
         public void editPhone ( int id, String newPhone)
         {
+            if(!RegistrationSystem.isValidPhoneNumber(newPhone))return;
             String query = "update student set PhoneNumber = ? where S_ID = ?";
             try {
                 Connection connection = DatabaseConnection.getConnection();
@@ -208,5 +209,26 @@ public class Student {
                 System.out.println("com.Models.Student.editDep(): " + e.getMessage());
             }
         }
+    public void editPass ( int acc_id, String newPass)
+    {
+        if(!RegistrationSystem.isValidPassword(newPass))return;
+        String query = "update account set Password = ? where ACC_ID = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, newPass);
+            ps.setInt(2, acc_id);
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Student password updated successfully.");
+            } else {
+                System.out.println("No rows were affected. Student password not found or not modified.");
+            }
+        } catch (Exception e) {
+            System.out.println("com.Models.Student.editPass(): " + e.getMessage());
+        }
+    }
+
 }
 
