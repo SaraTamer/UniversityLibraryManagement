@@ -1,15 +1,15 @@
 import java.sql.SQLException;
-import java.util.Scanner;
+import java.util.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
 
 public class loginSystem {
-    // Connection connection = null;
-    PreparedStatement statement = null;
-    ResultSet reqiredResult = null;
+//    Connection connection = null;
+//    PreparedStatement statement = null;
+//    ResultSet reqiredResult = null;
 
-    public boolean adminLogin(String email, String password) throws SQLException {
+    public boolean login(String email, String password) throws SQLException {
         boolean isAuthenticated = false;
         if (isAuthenticated(email, password)) {
             System.out.println("Login successful!");
@@ -24,13 +24,13 @@ public class loginSystem {
         try {
             String query = "SELECT * FROM Account WHERE Email = ? AND Password = ?";
             Connection connection = DatabaseConnection.getConnection();
-            statement = connection.prepareStatement(query);
+            PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, email);
             statement.setString(2, password);
             // Execute the query
-            reqiredResult = statement.executeQuery();
+            ResultSet requiredResult = statement.executeQuery();
             // Check if the account exists in the database
-            if (reqiredResult.next()) {
+            if (requiredResult.next()) {
                 return true;
             }
         }
@@ -38,9 +38,5 @@ public class loginSystem {
             e.printStackTrace();
         }
         return false;
-    }
-
-    public void StudentLogin(Student student) {
-
     }
 }
