@@ -10,11 +10,11 @@ public class Admin {
     String Gender;
     String Role;
     int ID;
-    int ACC_ID;
+    int ACC_ID=11;
     String Password;
-
+    Admin(){};
     Admin(String fname,String lname,String street,String city,String PhoneNum,String gender
-            ,int id,int AccID,String role,String pass){
+            ,int id,String role,String pass){
         firstName = fname;
         lastName = lname;
         Street = street;
@@ -22,13 +22,12 @@ public class Admin {
         phoneNum = PhoneNum;
         Gender = gender;
         ID = id;
-        ACC_ID = AccID;
         Role = role;
         Password = pass;
     }
     public void editfName(int id, String newName)
     {
-        String query = "update Admin set FirstName = ? where ID = ?";
+        String query = "update Admin set FirstName = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -48,7 +47,7 @@ public class Admin {
     }
     public void editlName(int id, String newName)
     {
-        String query = "update Admin set LastName = ? where ID = ?";
+        String query = "update Admin set LastName = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -68,7 +67,7 @@ public class Admin {
     }
     public void editCity(int id, String newCity)
     {
-        String query = "update Admin set City = ? where ID = ?";
+        String query = "update Admin set City = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -88,7 +87,7 @@ public class Admin {
     }
     public void editPhone(int id, String newPhone)
     {
-        String query = "update Admin set PhoneNum = ? where ID = ?";
+        String query = "update Admin set PhoneNumber = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -108,7 +107,7 @@ public class Admin {
     }
     public void editStreet(int id, String newStreet)
     {
-        String query = "update Admin set Street = ? where ID = ?";
+        String query = "update Admin set Street = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -128,7 +127,7 @@ public class Admin {
     }
     public void editRole(int id, String newRole)
     {
-        String query = "update Admin set Role = ? where ID = ?";
+        String query = "update Admin set Role = ? where A_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
@@ -146,15 +145,15 @@ public class Admin {
             System.out.println("com.Models.Admin.editRole(): " + e.getMessage());
         }
     }
-    public void editPass ( int acc_id, String newPass)
+    public void editPass ( int id, String newPass)
     {
         if(!RegistrationSystem.isValidPassword(newPass))return;
-        String query = "update account set Password = ? where ACC_ID = ?";
+        String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM Admin where A_ID = ?)";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, newPass);
-            ps.setInt(2, acc_id);
+            ps.setInt(2, id);
             int rowsAffected = ps.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -164,6 +163,23 @@ public class Admin {
             }
         } catch (Exception e) {
             System.out.println("com.Models.Admin.editPass(): " + e.getMessage());
+        }
+    }
+    public void editAccID(int id) {
+        String query = "UPDATE Admin SET ACC_ID = (SELECT MAX(ACC_ID) FROM account) WHERE A_ID = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Admin account ID updated successfully.");
+            } else {
+                System.out.println("No rows were affected. Admin ID not found or account ID not updated.");
+            }
+        } catch (Exception e) {
+            System.out.println("com.Models.Admin.editAccID(): " + e.getMessage());
         }
     }
 

@@ -85,12 +85,12 @@ public class Book {
         }
     }
     //update book language
-    public void updateBookLanguage(int ISBN,String Language){
-        String query  = "update book set language = ? where ISBN = ?";
+    public void updateBookLanguage(int ISBN,String Languge){
+        String query  = "update book set languge = ? where ISBN = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, Language);
+            ps.setString(1, Languge);
             ps.setInt(2, ISBN);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -112,7 +112,7 @@ public class Book {
     }
     //update book publisingYear
     public void updateBookPublisingYear(int ISBN,String publishingYear){
-        String query  = "update book set publishingYear = ? where ISBN = ?";
+        String query  = "update book set publisingYear = ? where ISBN = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);

@@ -13,11 +13,11 @@ public class Student {
     String Gender;
     String Department;
     String Password;
+    int ACC_ID=10;
     int ID;
-    int ACC_ID;
-
+    Student(){};
     Student(int id, String fname, String lname, String city, String street,
-            String PhoneNum, String gender, String dep, int AccID, String pass) {
+            String PhoneNum, String gender, String dep,  String pass) {
             firstName = fname;
             lastName = lname;
             Street = street;
@@ -25,7 +25,6 @@ public class Student {
             phoneNum = PhoneNum;
             Gender = gender;
             ID = id;
-            ACC_ID = AccID;
             Department = dep;
             Password = pass;
         }
@@ -194,14 +193,14 @@ public class Student {
                 System.out.println("com.Models.Student.editDep(): " + e.getMessage());
             }
         }
-    public void editPass ( int acc_id, String newPass) {
+    public void editPass ( int id, String newPass) {
         if (!RegistrationSystem.isValidPassword(newPass)) return;
-        String query = "update account set Password = ? where ACC_ID = ?";
+        String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM student where S_ID = ?)";
         try {
             Connection connection = DatabaseConnection.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, newPass);
-            ps.setInt(2, acc_id);
+            ps.setInt(2, id);
             int rowsAffected = ps.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -213,6 +212,42 @@ public class Student {
             System.out.println("com.Models.Student.editPass(): " + e.getMessage());
         }
     }
+    public void editAccID(int id) {
+        String query = "UPDATE student SET ACC_ID = (SELECT MAX(ACC_ID) FROM account) WHERE S_ID = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
+            int rowsAffected = ps.executeUpdate();
 
+            if (rowsAffected > 0) {
+                System.out.println("Student account ID updated successfully.");
+            } else {
+                System.out.println("No rows were affected. Student ID not found or account ID not updated.");
+            }
+        } catch (Exception e) {
+            System.out.println("com.Models.Student.editAccID(): " + e.getMessage());
+        }
+    }
+    public void editlName(int id, String newName)
+    {
+        String query = "update Student set LastName = ? where S_ID = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, newName);
+            ps.setInt(2, id);
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Student last name updated successfully.");
+            } else {
+                System.out.println("No rows were affected. Student data not found or not modified.");
+            }
+        }
+        catch (Exception e) {
+            System.out.println("com.Models.Student.editlName(): " + e.getMessage());
+        }
+    }
 }
 

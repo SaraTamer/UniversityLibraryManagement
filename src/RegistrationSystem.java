@@ -6,6 +6,7 @@ public class RegistrationSystem {
     Admin admin;
     Student student;
     Authentication insert = new Authentication();
+    int count = 0;
 
     public static boolean isValidPassword(String password) {
         // Checks if the password is at least 8 characters long and contains at least
@@ -54,11 +55,7 @@ public class RegistrationSystem {
             String role = scanner.nextLine();
             System.out.println("Enter your password: ");
             String password = scanner.nextLine();
-            // how system will generate it ?
-            System.out.println("Enter your account id: ");
-            int accID = Integer.parseInt(scanner.nextLine());
-
-            admin = new Admin(firstName, lastName, street, city, phoneNum, gender, id, accID, role, password);
+            admin = new Admin(firstName, lastName, street, city, phoneNum, gender, id, role, password);
 
             if (!isValidPassword(admin.getPassword())) {
                 System.out.println("Invalid password. Password must be at least 8 characters long and " +
@@ -70,8 +67,9 @@ public class RegistrationSystem {
                 System.out.println("Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.");
                 continue;
             }
-            insert.InsertAdmin(admin);
             insert.InsertAdminAccount(admin);
+            insert.InsertAdmin(admin);
+            admin.editAccID(admin.getID());
             break;
         }
 
@@ -102,24 +100,16 @@ public class RegistrationSystem {
             String department = scanner.nextLine();
             System.out.println("Enter your password: ");
             String password = scanner.nextLine();
-            // how system will generate it ?
-            System.out.println("Enter your account id: ");
-            int accID = Integer.parseInt(scanner.nextLine());
-
-            student = new Student(id,firstName, lastName, city,street, phoneNum, gender, department,accID, password);
-
+            student = new Student(id,firstName, lastName, city,street, phoneNum, gender, department, password);
             student.setFirstName(firstName);
             student.setLastName(lastName);
             student.setCity(city);
             student.setStreet(street);
             student.setPhoneNum(phoneNum);
             student.setID(id);
-            student.setACC_ID(accID);
             student.setDepartment(department);
             student.setPassword(password);
             student.setGender(gender);
-
-
 
             if (!isValidPassword(student.getPassword())) {
                 System.out.println("Invalid password. Password must be at least 8 characters long and " +
@@ -131,8 +121,9 @@ public class RegistrationSystem {
                 System.out.println("Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.");
                 continue;
             }
-            insert.InsertStudent(student);
             insert.InsertStudentAccount(student);
+            insert.InsertStudent(student);
+            student.editAccID(student.getID());
             break;
         }
 

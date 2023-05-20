@@ -28,7 +28,7 @@ public class Authentication {
     }
 
     public void InsertAdmin(Admin admin) {
-        String query = "insert into Student (S_ID,FirstName, LastName, City, Street, PhoneNumber, Gender, Department) values(?, ?, ?, ? , ? ,?, ? , ?)";
+        String query = "insert into admin (A_ID,FirstName, LastName, City, Street, PhoneNumber, Gender, Role) values(?, ?, ?, ? , ? ,?, ? ,?)";
         try {
             connection = DatabaseConnection.getConnection();
             ps = connection.prepareStatement(query);
@@ -47,13 +47,12 @@ public class Authentication {
     }
 
     public void InsertStudentAccount(Student student) {
-        String query = "insert into Account (ACC_ID,Email,Password) values(?, ?, ?)";
+        String query = "insert into Account (Email,Password) values(?, ?)";
         try {
             connection = DatabaseConnection.getConnection();
             ps = connection.prepareStatement(query);
-            ps.setInt(1, student.getACC_ID());
-            ps.setInt(2, student.getID());
-            ps.setString(3, student.getPassword());
+            ps.setInt(1, student.getID());
+            ps.setString(2, student.getPassword());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("com.Models.user.InsertStudentAccount()" + e.getMessage());
@@ -61,13 +60,12 @@ public class Authentication {
     }
 
     public void InsertAdminAccount(Admin admin) {
-        String query = "insert into Account (ACC_ID,Password,Role) values(?, ?, ?)";
+        String query = "insert into Account (Email,Password) values( ?, ?)";
         try {
             connection = DatabaseConnection.getConnection();
             ps = connection.prepareStatement(query);
-            ps.setInt(1, admin.getACC_ID());
+            ps.setInt(1, admin.getID());
             ps.setString(2, admin.getPassword());
-            ps.setInt(3, admin.getID());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("com.Models.user.InsertAdminAccount()" + e.getMessage());
