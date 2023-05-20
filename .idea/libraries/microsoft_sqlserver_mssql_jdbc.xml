@@ -18,6 +18,8 @@
       <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.2/jackson-core-2.13.2.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/mssql-jdbc-11.2.0.jre11-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

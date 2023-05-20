@@ -16,6 +16,7 @@ public class Main {
 
 //        Book book = new Book();
 //        book.addNewBook(1234567890, "CS", "CS", "English", "1", "2023");
+//        book.addNewBook(1234544490, "Intro to CS", "CS", "English", "1", "2022");
 //
 //        book.updateBookTitle(1234567890, "LM");
 //        book.updateBookCategory(1234567890, "IS");
@@ -32,5 +33,14 @@ public class Main {
 //        book2.addNewBook(1234567892, "How to make soup", "Kichen", "English", "1", "2023");
 //        book2.addNewBook(1234567892, "How to make soup", "Kichen", "English", "1", "2021");
 
+
+//        Display display = new Display();
+//        display.viewAllBooks();
+//        display.searchByTitle("CS");
+//        display.searchByISBN(1234544490);
+//        display.searchByCategory("CS");
+//        display.searchByAuthor("donham");
+//        display.searchByAuthor("Satya Nadella");
+//        display.searchByYear("2023");
     }
 }

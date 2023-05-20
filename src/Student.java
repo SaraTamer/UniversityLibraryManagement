@@ -1,5 +1,9 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class Student {
     String firstName;
     String lastName;
@@ -113,25 +117,6 @@ public class Student {
                 System.out.println("com.Models.Student.editfName(): " + e.getMessage());
             }
         }
-        public void editlName ( int id, String newName)
-        {
-            String query = "update student set LastName = ? where S_ID = ?";
-            try {
-                Connection connection = DatabaseConnection.getConnection();
-                PreparedStatement ps = connection.prepareStatement(query);
-                ps.setString(1, newName);
-                ps.setInt(2, id);
-                int rowsAffected = ps.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    System.out.println("Student last name updated successfully.");
-                } else {
-                    System.out.println("No rows were affected. Student last name not found or not modified.");
-                }
-            } catch (Exception e) {
-                System.out.println("com.Models.Student.editlName(): " + e.getMessage());
-            }
-        }
         public void editCity ( int id, String newCity)
         {
             String query = "update student set City = ? where S_ID = ?";
@@ -209,9 +194,8 @@ public class Student {
                 System.out.println("com.Models.Student.editDep(): " + e.getMessage());
             }
         }
-    public void editPass ( int acc_id, String newPass)
-    {
-        if(!RegistrationSystem.isValidPassword(newPass))return;
+    public void editPass ( int acc_id, String newPass) {
+        if (!RegistrationSystem.isValidPassword(newPass)) return;
         String query = "update account set Password = ? where ACC_ID = ?";
         try {
             Connection connection = DatabaseConnection.getConnection();
