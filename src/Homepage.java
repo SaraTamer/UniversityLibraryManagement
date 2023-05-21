@@ -41,10 +41,9 @@ public class Homepage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                // Redirect to student home page
                 Shomepage studentHomePage = new Shomepage();
                 studentHomePage.setVisible(true);
-                dispose(); // Close the login form
+                dispose();
             }
         });
 
@@ -69,12 +68,8 @@ public class Homepage extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Homepage();
-            }
-        });
+    public static void main(String[] args)
+    {
+        new Homepage();
     }
 }
