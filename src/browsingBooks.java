@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SsearchBook extends JFrame {
+public class browsingBooks extends JFrame {
     private JTable table;
     private JComboBox<String> searchCriteriaComboBox;
     private JTextField searchTextField;
     private JButton searchButton;
 
-    public SsearchBook() {
+    public browsingBooks() {
         setTitle("Search for a book");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
@@ -56,16 +56,17 @@ public class SsearchBook extends JFrame {
         // Add the scroll pane to the content pane
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
+
         // Add ActionListener to the search button
         searchButton.addActionListener(new ActionListener() {
+            Display display = new Display();
+            ArrayList<Book> searchResult = new ArrayList<>();
             @Override
             public void actionPerformed(ActionEvent e) {
                 String searchCriteria = (String) searchCriteriaComboBox.getSelectedItem();
                 String searchTerm = searchTextField.getText();
 
                 // Call the Display class method to search by the chosen criteria and get the result
-                Display display = new Display();
-                ArrayList<Book> searchResult = new ArrayList<>();
 
                 try {
                     if (searchCriteria.equals("ISBN")) {
@@ -104,10 +105,22 @@ public class SsearchBook extends JFrame {
                 }
             }
         });
+        Display display = new Display();
+        ArrayList<Book> searchResult = new ArrayList<>();
+        try {
+            searchResult = display.viewAllBooks();
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        for (Book book : searchResult) {
+            Object[] rowData = {book.getISBN(), book.getTitle(), book.getCategory(),
+                    book.getLanguage(), book.getEdition(), book.getPublishingYear(), book.getAuthor()};
+            tableModel.addRow(rowData);
+        }
 
         setVisible(true);
     }
     public static void main(String[] args) {
-       new SsearchBook();
+       new browsingBooks();
     }
 }
