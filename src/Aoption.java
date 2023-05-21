@@ -13,6 +13,11 @@ public class Aoption extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 200);
 
+        JLabel titleLabel = new JLabel("Admin Functionalities:");
+        titleLabel.setBounds(50, 10, 200, 20);
+        titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(titleLabel);
+
         // Create buttons
         editAccountButton = new JButton("Edit Account Info");
         addBookButton = new JButton("Add Book");
@@ -22,6 +27,12 @@ public class Aoption extends JFrame implements ActionListener {
         editAccountButton.setBounds(50, 30, 200, 30);
         addBookButton.setBounds(50, 70, 200, 30);
         editBookButton.setBounds(50, 110, 200, 30);
+
+        Color babyBlueColor = new Color(137, 207, 240);
+        addBookButton.setBackground(babyBlueColor);
+        editAccountButton.setBackground(babyBlueColor);
+        editBookButton.setBackground(babyBlueColor);
+
 
         // Add buttons to the frame
         add(editAccountButton);
@@ -39,15 +50,26 @@ public class Aoption extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == editAccountButton) {
-            // Call the function to edit account info
-            editAccountInfo();
+            openAeditAccountForm();
         } else if (e.getSource() == addBookButton) {
-            // Call the function to add a book
-            Book.addNewBook();
+            openAddBookForm();
         } else if (e.getSource() == editBookButton) {
-            // Call the function to edit book details
-            editBookDetails();
+            openEditBookForm();
         }
+    }
+    public void openAddBookForm() {
+        AAddBook addBookForm = new AAddBook();
+        dispose();
+    }
+
+    public void openAeditAccountForm() {
+        AEditAcc editAccForm = new AEditAcc();
+        dispose();
+    }
+
+    public void openEditBookForm() {
+        AAddBook editBookForm = new AAddBook();
+        dispose();
     }
 
     public static void main(String[] args) {
