@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="">
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment=""/>
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_22_2023_4_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_22_2023_4_27_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -27,6 +27,11 @@
       <change beforePath="$PROJECT_DIR$/src/SsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Statistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/browsingBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/browsingBooks.java" afterDir="false" />
+=======
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Statistics done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
+>>>>>>> a9af132e9ddead894b7807ec405e37dab2b705cf
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +222,9 @@
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
