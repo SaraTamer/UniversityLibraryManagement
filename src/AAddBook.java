@@ -131,23 +131,23 @@ public class AAddBook extends JFrame {
         setVisible(true);
     }
 
-   addBookButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e){
-            Book();
-        }
-   });
-
-    public void setAddBookButton() {
-        int ISBN = Integer.parseInt(ISBNTextField.getText());
-        String bookTitle = bookTitleTextField.getText();
-        String category = categoryTextField.getText();
-        String language = languageTextField.getText();
-        int edition = Integer.parseInt(editionTextField.getText());
-        int publishingYear = Integer.parseInt(publishingYearTextField.getText());
-        Book book = new book(ISBN, bookTitle, category, language, edition, publishingYear);
-        Book.addBook(book);
-    }
+//   addBookButton.addActionListener(new ActionListener() {
+//        @Override
+//        public void actionPerformed(ActionEvent e){
+//            Book();
+//        }
+//   });
+//
+//    public void setAddBookButton() {
+//        int ISBN = Integer.parseInt(ISBNTextField.getText());
+//        String bookTitle = bookTitleTextField.getText();
+//        String category = categoryTextField.getText();
+//        String language = languageTextField.getText();
+//        int edition = Integer.parseInt(editionTextField.getText());
+//        int publishingYear = Integer.parseInt(publishingYearTextField.getText());
+//        Book book = new book(ISBN, bookTitle, category, language, edition, publishingYear);
+//        Book.addBook(book);
+//    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
     }
