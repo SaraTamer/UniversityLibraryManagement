@@ -4,9 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="adding display class" />
-    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    <change beforePath="$PROJECT_DIR$/src/AAddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAddBook.java" afterDir="false" />
     <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Sign up and log in gui">
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_20_2023_11_49_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_20_2023_11_49_PM__Changes_.xml" afterDir="false" />
@@ -14,15 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_20_2023_12_55_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_20_2023_12_55_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_21_2023_6_56_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_21_2023_6_56_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegistrationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shomepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +80,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SsignUp">
+  <component name="RunManager" selected="Application.Aoption">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -169,13 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Aoption" />
+        <item itemvalue="Application.SsignUp" />
         <item itemvalue="Application.AAddBook" />
         <item itemvalue="Application.AEditBook" />
-        <item itemvalue="Application.SsignUp" />
         <item itemvalue="Application.AsignUp" />
-        <item itemvalue="Application.Slogin" />
-        <item itemvalue="Application.Alogin" />
-        <item itemvalue="Application.Aoption" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +178,7 @@
       <workItem from="1684697394853" duration="8085000" />
       <workItem from="1684707242182" duration="8560000" />
       <workItem from="1684751636898" duration="6275000" />
+      <workItem from="1684760657704" duration="1230000" />
     </task>
     <task id="LOCAL-00001" summary="In the name of God.">
       <created>1684329854395</created>
@@ -223,6 +211,9 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
       <list>
@@ -248,7 +239,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="In the name of God." />
     <MESSAGE value="insert added" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert added" />
     <MESSAGE value="Home Pages GUI" />
     <option name="LAST_COMMIT_MESSAGE" value="Home Pages GUI" />
   </component>
