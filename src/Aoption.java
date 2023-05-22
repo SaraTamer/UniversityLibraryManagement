@@ -69,19 +69,19 @@ public class Aoption extends JFrame implements ActionListener {
             dispose();
         } else if (e.getSource() == addBookButton) {
             AAddBook addPage = new AAddBook();
-           // addPage.setVisible(true);
+            addPage.setVisible(true);
             dispose();
         } else if (e.getSource() == editBookButton) {
             AEditBook editBookPage = new AEditBook();
-           // editBookPage.setVisible(true);
+            editBookPage.setVisible(true);
             dispose();
         } else if (e.getSource() == statisticsButton) {
-
-             dispose();
+/*            Astatistics stat = new Astatistics();
+            stat.setVisible(true);
+            dispose();*/
         }else if (e.getSource() == deleteStudentButton) {
             Sdelete delete = new Sdelete();
-           // delete.setVisible(true);
-           // delete.setVisible(true);
+            delete.setVisible(true);
             dispose();
         }
     }

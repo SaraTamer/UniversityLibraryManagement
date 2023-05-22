@@ -10,7 +10,7 @@ public class Sdelete extends JFrame implements ActionListener  {
     Sdelete(){
         setTitle("Delete Student");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 300);
+        setSize(400, 200);
 
         JLabel idLabel = new JLabel("Student ID:");
         id = new JTextField();
@@ -42,4 +42,9 @@ public class Sdelete extends JFrame implements ActionListener  {
             dispose();
         }
     }
+
+    public static void main (String[]args){
+        new Sdelete();
+    }
+
 }
