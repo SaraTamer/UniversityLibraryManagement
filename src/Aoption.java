@@ -50,26 +50,18 @@ public class Aoption extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == editAccountButton) {
-            openAeditAccountForm();
+            AEditAcc editPage = new AEditAcc();
+            editPage.setVisible(true);
+            dispose();
         } else if (e.getSource() == addBookButton) {
-            openAddBookForm();
+            AAddBook addPage = new AAddBook();
+           // addPage.setVisible(true);
+            dispose();
         } else if (e.getSource() == editBookButton) {
-            openEditBookForm();
+            AEditBook editBookPage = new AEditBook();
+           // editBookPage.setVisible(true);
+            dispose();
         }
-    }
-    public void openAddBookForm() {
-        AAddBook addBookForm = new AAddBook();
-        dispose();
-    }
-
-    public void openAeditAccountForm() {
-        AEditAcc editAccForm = new AEditAcc();
-        dispose();
-    }
-
-    public void openEditBookForm() {
-        AAddBook editBookForm = new AAddBook();
-        dispose();
     }
 
     public static void main(String[] args) {
