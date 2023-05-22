@@ -4,15 +4,15 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Student student = new Student();
 
-        Authentication i = new Authentication();
-        RegistrationSystem register = new RegistrationSystem();
+//        Authentication i = new Authentication();
+//        RegistrationSystem register = new RegistrationSystem();
 //        register.studentSignUp();
 //        register.adminSignUp();
-        Student stud = new Student(2,"Aya","Ali","cairo","s1","0100","female","IS","123");
-        i.InsertStudent(stud);
-        Student s1 = new Student(11,"Ahmed","Ali","cairo","l4","0110","male","AI","173");
-        i.InsertStudent(s1);
-        s1.deleteStudent(7);
+//        Student stud = new Student(2,"Aya","Ali","cairo","s1","0100","female","IS","123");
+//        i.InsertStudent(stud);
+//        Student s1 = new Student(11,"Ahmed","Ali","cairo","l4","0110","male","AI","173");
+//        i.InsertStudent(s1);
+//        s1.deleteStudent(7);
 //        stud.editName(1,"sjfdjf");
 
 //        InsertUser(1, "sara" , "tamer", "cairo", "haram", "012222222", "female", "it");
