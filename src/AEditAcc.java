@@ -33,16 +33,16 @@ public class AEditAcc extends JFrame implements ActionListener {
         JLabel RoleLabel = new JLabel("Role:");
         JLabel PasswordLabel = new JLabel("Password:");
 
-
         id = new JTextField(loginSystem.admin.getID());
+        id.setText(String.valueOf(loginSystem.admin.getID()));
         id.setEnabled(false);
-        firstName = new JTextField(20);
-        lastName = new JTextField(20);
-        City = new JTextField(20);
-        Street = new JTextField(20);
-        phoneNum = new JTextField(20);
-        Role = new JTextField(20);
-        Password = new JTextField(20);
+        firstName = new JTextField(loginSystem.admin.getFirstName());
+        lastName = new JTextField(loginSystem.admin.getLastName());
+        City = new JTextField(loginSystem.admin.getCity());
+        Street = new JTextField(loginSystem.admin.getStreet());
+        phoneNum = new JTextField(loginSystem.admin.getPhoneNum());
+        Role = new JTextField(loginSystem.admin.getRole());
+        Password = new JTextField(loginSystem.admin.getPassword());
 
 
 
@@ -113,26 +113,27 @@ public class AEditAcc extends JFrame implements ActionListener {
                 String newRole = Role.getText();
                 String newPassword = Password.getText();
 
-                loginSystem.admin.editfName(Integer.parseInt(String.valueOf(id)), newFirstName);
-                loginSystem.admin.editlName(Integer.parseInt(String.valueOf(id)), newLastName);
-                loginSystem.admin.editCity(Integer.parseInt(String.valueOf(id)), newCity);
-                loginSystem.admin.editStreet(Integer.parseInt(String.valueOf(id)), newStreet);
-                loginSystem.admin.editPhone(Integer.parseInt(String.valueOf(id)), newPhone);
-                loginSystem.admin.editRole(Integer.parseInt(String.valueOf(id)), newRole);
-                loginSystem.admin.editPass(Integer.parseInt(String.valueOf(id)), newPassword);
+                loginSystem.admin.editfName(loginSystem.admin.getID(), newFirstName);
+                loginSystem.admin.editlName(loginSystem.admin.getID(), newLastName);
+                loginSystem.admin.editCity(loginSystem.admin.getID(), newCity);
+                loginSystem.admin.editStreet(loginSystem.admin.getID(), newStreet);
+                loginSystem.admin.editPhone(loginSystem.admin.getID(), newPhone);
+                loginSystem.admin.editRole(loginSystem.admin.getID(), newRole);
+                loginSystem.admin.editPass(loginSystem.admin.getID(), newPassword);
 
                 // Display a message dialog to inform the user about the successful update
                 JOptionPane.showMessageDialog(this, "Account information updated successfully!");
 
                 // Close the AdminEditAcc form
                 dispose();
-            } else if (e.getSource() == cancelButton) {
-                Aoption aoption = new Aoption();
-                aoption.setVisible(true);
-                // Close the AdminEditAcc form without saving changes
-                dispose();
             }
+        Aoption aoption = new Aoption();
+        aoption.setVisible(true);
+        dispose();
 
         }
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(AEditAcc::new);
+    }
     }
 
