@@ -125,6 +125,18 @@ public class Book {
         }
     }
 
+    public void deleteBook(int ISBN){
+        String query = "delete from book where ISBN = ?";
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setInt(1, ISBN);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("com.Models.user.Insertuser()" + e.getMessage());
+        }
+    }
+
 
     public int getISBN() {
         return ISBN;
@@ -173,6 +185,8 @@ public class Book {
     public void setPublishingYear(String publishingYear) {
         this.publishingYear = publishingYear;
     }
+
+
     public void setAuthor(String author){this.author = author;}
     public String getAuthor(){return author;}
 }

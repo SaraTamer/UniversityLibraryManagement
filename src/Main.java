@@ -2,20 +2,26 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
+        Student student = new Student();
+
 //        Authentication i = new Authentication();
 //        RegistrationSystem register = new RegistrationSystem();
 //        register.studentSignUp();
 //        register.adminSignUp();
-//        Student stud = new Student(2,"Aya","Ali","cairo","s1","0100","female","IS",9,"123");
+//        Student stud = new Student(2,"Aya","Ali","cairo","s1","0100","female","IS","123");
 //        i.InsertStudent(stud);
+//        Student s1 = new Student(11,"Ahmed","Ali","cairo","l4","0110","male","AI","173");
+//        i.InsertStudent(s1);
+//        s1.deleteStudent(7);
 //        stud.editName(1,"sjfdjf");
 
 //        InsertUser(1, "sara" , "tamer", "cairo", "haram", "012222222", "female", "it");
 
 //        System.out.println(i.selection());Book book = new Book();
 
-//        Book book = new Book();
+        Book book = new Book();
 //        book.addNewBook(1234567890, "CS", "CS", "English", "1", "2023");
+        book.deleteBook(1234567890);
 //        book.addNewBook(1234544490, "Intro to CS", "CS", "English", "1", "2022");
 
 //        Author author = new Author("Perry Donham", "English", 1234544490);
@@ -47,5 +53,8 @@ public class Main {
 //        display.searchByAuthor("donham");
 //        display.searchByAuthor("Satya Nadella");
 //        display.searchByYear("2023");
+
+
+
     }
 }

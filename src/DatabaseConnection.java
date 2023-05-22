@@ -1,9 +1,10 @@
 import java.sql.*;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/mylibrary";
+    private static final String URL = "jdbc:mysql://localhost:3306/universitylibrary";
+//    private static final String URL = "jdbc:mysql://localhost:3306/libar";
     private static final String UserName = "root";
-    private static final String password = "123456";
+    private static final String password = "Sos010Aym@n";
     private static Connection connection = null;
     public static Connection getConnection()
     {
