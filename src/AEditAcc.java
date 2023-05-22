@@ -122,8 +122,18 @@ public class AEditAcc extends JFrame implements ActionListener {
                 loginSystem.admin.editlName(loginSystem.admin.getID(), newLastName);
                 loginSystem.admin.editCity(loginSystem.admin.getID(), newCity);
                 loginSystem.admin.editStreet(loginSystem.admin.getID(), newStreet);
+                if (!RegistrationSystem.isValidPhoneNumber(newPhone)) {
+                    JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015."
+                            , "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
                 loginSystem.admin.editPhone(loginSystem.admin.getID(), newPhone);
                 loginSystem.admin.editRole(loginSystem.admin.getID(), newRole);
+                if (!RegistrationSystem.isValidPassword(newPassword)) {
+                    JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
+                            "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
                 loginSystem.admin.editPass(loginSystem.admin.getID(), newPassword);
 
                 // Display a message dialog to inform the user about the successful update

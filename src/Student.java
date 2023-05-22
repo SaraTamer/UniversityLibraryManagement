@@ -137,7 +137,6 @@ public class Student {
         }
         public void editPhone ( int id, String newPhone)
         {
-            if(!RegistrationSystem.isValidPhoneNumber(newPhone))return;
             String query = "update student set PhoneNumber = ? where S_ID = ?";
             try {
                 Connection connection = DatabaseConnection.getConnection();
@@ -194,7 +193,6 @@ public class Student {
             }
         }
         public void editPass ( int id, String newPass) {
-            if (!RegistrationSystem.isValidPassword(newPass)) return;
             String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM student where S_ID = ?)";
             try {
                 Connection connection = DatabaseConnection.getConnection();

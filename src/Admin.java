@@ -148,7 +148,6 @@ public class Admin {
     }
     public void editPass ( int id, String newPass)
     {
-        if(!RegistrationSystem.isValidPassword(newPass))return;
         String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM Admin where A_ID = ?)";
         try {
             Connection connection = DatabaseConnection.getConnection();

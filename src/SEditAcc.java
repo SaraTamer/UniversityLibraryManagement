@@ -121,8 +121,18 @@ public class SEditAcc extends JFrame implements ActionListener {
             loginSystem.student.editlName(loginSystem.student.getID(), newLastName);
             loginSystem.student.editCity(loginSystem.student.getID(), newCity);
             loginSystem.student.editStreet(loginSystem.student.getID(), newStreet);
+            if (!RegistrationSystem.isValidPhoneNumber(newPhone)) {
+                JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015."
+                        , "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             loginSystem.student.editPhone(loginSystem.student.getID(), newPhone);
             loginSystem.student.editDep(loginSystem.student.getID(), newdep);
+            if (!RegistrationSystem.isValidPassword(newPassword)) {
+                JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
+                        "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             loginSystem.student.editPass(loginSystem.student.getID(), newPassword);
 
             // Display a message dialog to inform the user about the successful update
