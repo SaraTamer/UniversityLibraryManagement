@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.*;
 
 public class loginSystem {
-//    Connection connection = null;
-//    PreparedStatement statement = null;
-//    ResultSet reqiredResult = null;
+
     public static Admin admin ;
     public static Student student ;
 

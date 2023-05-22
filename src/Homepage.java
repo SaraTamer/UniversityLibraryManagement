@@ -12,7 +12,7 @@ public class Homepage extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
-
+        getContentPane().setBackground(Color.RED);
         JLabel welcomeLabel = new JLabel("Welcome! \n Are you Admin or Student?");
         welcomeLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
 
