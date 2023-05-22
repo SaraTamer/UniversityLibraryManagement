@@ -12,11 +12,8 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="f3a7dee2-a679-430e-bd92-f9a25a8737b5">
-      <console name="Connection" type="STANDARD" schema="unilibaray" session="Pool"><![CDATA[select * from student
-select * from Admin
-Select * from book
-select * from author]]></console>
+    <connection id="4927c7ae-f023-4346-b47b-bd26be5b6ce3">
+      <console name="Connection 1" type="STANDARD" schema="finallibrary" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -42,13 +39,13 @@ select * from author]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="f3a7dee2-a679-430e-bd92-f9a25a8737b5" active="true" signed="true">
+      <connection id="4927c7ae-f023-4346-b47b-bd26be5b6ce3" active="true" signed="true">
         <database>
-          <name value="Connection" />
+          <name value="Connection 1" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -58,7 +55,7 @@ select * from author]]></console>
           <database value="mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
-          <deprecated-pwd value="MTIzNA==" />
+          <deprecated-pwd value="MTIzNDU2" />
         </database>
         <properties>
           <auto-commit value="false" />
