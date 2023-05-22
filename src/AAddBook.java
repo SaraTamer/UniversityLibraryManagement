@@ -36,7 +36,7 @@ public class AAddBook extends JFrame {
     public AAddBook() {
         setTitle("Add Book");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(600, 600);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         JPanel contentPanel = new JPanel();

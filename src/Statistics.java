@@ -1,6 +1,10 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Statistics {
 
@@ -111,6 +115,81 @@ public class Statistics {
         }
 
         return totalAdmins;
+    }
+
+    public static Map<String, Integer> countStudentsByDepartment() {
+        String query = "SELECT Department, COUNT(*) AS totalStudents FROM Student GROUP BY Department";
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement ps = null;
+        Map<String, Integer> studentCountMap = new HashMap<>();
+
+        try {
+            connection = DatabaseConnection.getConnection();
+            ps = connection.prepareStatement(query);
+            resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                String department = resultSet.getString("Department");
+                int totalStudents = resultSet.getInt("totalStudents");
+                studentCountMap.put(department, totalStudents);
+            }
+        } catch (Exception e) {
+            System.out.println("com.Models.user.countStudentsByDepartment(): " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Error closing database resources: " + e.getMessage());
+            }
+        }
+
+        return studentCountMap;
+    }
+    public static Map<String, Integer> countBooksByPublishingYear() {
+        String query = "SELECT PublisingYear, COUNT(*) AS BookCount FROM Book GROUP BY PublisingYear";
+        Map<String, Integer> bookCountMap = new HashMap<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement ps = null;
+
+        try {
+            connection = DatabaseConnection.getConnection();
+            ps = connection.prepareStatement(query);
+            resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                String publishingYear = resultSet.getString("PublisingYear");
+                int bookCount = resultSet.getInt("BookCount");
+                bookCountMap.put(publishingYear, bookCount);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error executing query: " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Error closing database resources: " + e.getMessage());
+            }
+        }
+
+        return bookCountMap;
     }
 
 }

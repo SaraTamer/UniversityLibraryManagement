@@ -26,7 +26,7 @@ public class Aoption extends JFrame implements ActionListener {
         editAccountButton = new JButton("Edit Account Info");
         addBookButton = new JButton("Add Book");
         editBookButton = new JButton("Edit Book Details");
-        statisticsButton = new JButton("View Books statistics");
+        statisticsButton = new JButton("Report");
         deleteStudentButton = new JButton("Delete a Student");
 
         // Set button positions

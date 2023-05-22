@@ -152,6 +152,8 @@ public class SEditAcc extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(this, "Account information updated successfully!");
 
             // Close the AdminEditAcc form
+            Soption OptionPage = new Soption();
+            OptionPage.setVisible(true);
             dispose();
         } else if (e.getSource() == cancelButton) {
             Soption soption = new Soption();
