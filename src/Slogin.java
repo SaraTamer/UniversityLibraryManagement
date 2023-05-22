@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Slogin extends JFrame {
     private JLabel IDText = new JLabel("ID");
@@ -61,7 +64,34 @@ public class Slogin extends JFrame {
         getContentPane().add(panel, BorderLayout.CENTER);
 
         setVisible(true);
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    registerButtonClicked();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
+    private void registerButtonClicked() throws SQLException {
+        String ID= IDTextField.getText();
+        String password = PassTextField.getText();
+        loginSystem s = new loginSystem();
+
+        if (s.SisAuthenticated(ID,password)) {
+            Soption OptionPage = new Soption();
+            OptionPage.setVisible(true);
+            dispose();
+            return;
+        }
+        JOptionPane.showMessageDialog(this, "Invalid email or password! Please try again", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+    }
+
+
 
     public static void main(String[] args) {
         new Slogin();

@@ -1,5 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class SsignUp extends JFrame {
     private JLabel fnameText = new JLabel("First Name");
@@ -22,6 +26,8 @@ public class SsignUp extends JFrame {
     private JFormattedTextField genderTextField = new JFormattedTextField();
     private JLabel depText = new JLabel( "Department");
     private JFormattedTextField depTextField = new JFormattedTextField();
+    private JLabel passText = new JLabel( "Password");
+    private JFormattedTextField passTextField = new JFormattedTextField();
 
     private JButton submit = new JButton("Sign Up");
 
@@ -75,6 +81,10 @@ public class SsignUp extends JFrame {
         depText.setPreferredSize(labelSize);
         depText.setFont(labelFont);
         depTextField.setPreferredSize(textFieldSize);
+
+        passText.setPreferredSize(labelSize);
+        passText.setFont(labelFont);
+        passTextField.setPreferredSize(textFieldSize);
 
         submit.setPreferredSize(new Dimension(100, 30));
 
@@ -137,8 +147,15 @@ public class SsignUp extends JFrame {
         gbc.gridx = 1;
         panel.add(depTextField, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 0;
         gbc.gridy = 8;
+        panel.add(passText, gbc);
+
+        gbc.gridx = 1;
+        panel.add(passTextField, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 9;
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.insets = new Insets(20, 0, 0, 0); // Adjust spacing for the button
         gbc.gridwidth = 2;
@@ -149,8 +166,39 @@ public class SsignUp extends JFrame {
         getContentPane().add(panel, BorderLayout.NORTH);
 
         setVisible(true);
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registerButtonClicked();
+            }
+        });
     }
+    private void registerButtonClicked(){
+        int id = Integer.parseInt(IDTextField.getText());
+        String firstName = fnameTextField.getText();
+        String lastName = lnameTextField.getText();
+        String street = StreetTextField.getText();
+        String city = CityTextField.getText();
+        String phoneNum = PHTextField.getText();
+        String gender = genderTextField.getText();
+        String department = depTextField.getText();
+        String password = passTextField.getText();
+        RegistrationSystem obj = new RegistrationSystem();
+        if (!obj.isValidPassword(password)) {
+            JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
+                    "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
+        if (!obj.isValidPhoneNumber(phoneNum)) {
+            JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        obj.studentSignUp(id, firstName, lastName, city, street, phoneNum, gender, department, password);
+        Slogin OptionPage = new Slogin();
+        OptionPage.setVisible(true);
+        dispose();
+    }
     public static void main(String[] args) {
         new SsignUp();
     }

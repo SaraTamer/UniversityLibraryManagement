@@ -11,17 +11,6 @@ public class loginSystem {
     public static Admin admin ;
     public static Student student ;
 
-    public boolean Alogin(String email, String password) throws SQLException {
-        boolean isAuthenticated = false;
-        if (AisAuthenticated(email, password)) {
-            System.out.println("Login successful!");
-            System.out.println("Welcome to the University Library Management system!");
-            isAuthenticated = true;
-        } else {
-            System.out.println("Invalid email or password! Please try again");
-        }
-        return isAuthenticated;
-    }
     public boolean AisAuthenticated(String email, String password) throws SQLException {
         try {
             String query = "SELECT * FROM Account as a ,admin as s WHERE a.Email = s.A_ID AND a.Email = ? AND a.Password = ?";
@@ -51,18 +40,6 @@ public class loginSystem {
         return false;
     }
 
-
-    public boolean Slogin(String email, String password) throws SQLException {
-        boolean isAuthenticated = false;
-        if (SisAuthenticated(email, password)) {
-            System.out.println("Login successful!");
-            System.out.println("Welcome to the University Library Management system!");
-            isAuthenticated = true;
-        } else {
-            System.out.println("Invalid email or password! Please try again");
-        }
-        return isAuthenticated;
-    }
     public boolean SisAuthenticated(String email, String password) throws SQLException {
         try {
             String query = "SELECT * FROM Account as a ,student as s WHERE a.Email = s.S_ID AND a.Email = ? AND a.Password = ?";

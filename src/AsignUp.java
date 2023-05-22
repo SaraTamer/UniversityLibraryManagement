@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class AsignUp extends JFrame {
     private JLabel fnameText = new JLabel("First Name");
@@ -22,6 +25,9 @@ public class AsignUp extends JFrame {
     private JFormattedTextField genderTextField = new JFormattedTextField();
     private JLabel RoleText = new JLabel( "Role");
     private JFormattedTextField RoleTextField = new JFormattedTextField();
+
+    private JLabel passText = new JLabel( "Password");
+    private JFormattedTextField passTextField = new JFormattedTextField();
 
     private JButton submit = new JButton("Sign Up");
 
@@ -75,6 +81,10 @@ public class AsignUp extends JFrame {
         RoleText.setPreferredSize(labelSize);
         RoleText.setFont(labelFont);
         RoleTextField.setPreferredSize(textFieldSize);
+
+        passText.setPreferredSize(labelSize);
+        passText.setFont(labelFont);
+        passTextField.setPreferredSize(textFieldSize);
 
         submit.setPreferredSize(new Dimension(100, 30));
 
@@ -137,22 +147,66 @@ public class AsignUp extends JFrame {
         gbc.gridx = 1;
         panel.add(RoleTextField, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 0;
         gbc.gridy = 8;
+        panel.add(passText, gbc);
+
+        gbc.gridx = 1;
+        panel.add(passTextField, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 9;
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.insets = new Insets(20, 0, 0, 0); // Adjust spacing for the button
         gbc.gridwidth = 2;
         panel.add(submit, gbc);
+
 
         // Use a BorderLayout for the main content pane
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.NORTH);
 
         setVisible(true);
-    }
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    registerButtonClicked();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });}
+        private void registerButtonClicked() throws SQLException {
+            int id = Integer.parseInt(IDTextField.getText());
+            String firstName = fnameTextField.getText();
+            String lastName = lnameTextField.getText();
+            String street = StreetTextField.getText();
+            String city = CityTextField.getText();
+            String phoneNum = PHTextField.getText();
+            String gender = genderTextField.getText();
+            String role = RoleTextField.getText();
+            String password = passTextField.getText();
+            RegistrationSystem obj = new RegistrationSystem();
+            if (!obj.isValidPassword(password)) {
+                JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
+                        "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-    public static void main(String[] args) {
-        new AsignUp();
-    }
+             if (!obj.isValidPhoneNumber(phoneNum)) {
+                JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            obj.adminSignUp(id, firstName, lastName, city, street, phoneNum, gender, role, password);
+            Alogin OptionPage = new Alogin();
+            OptionPage.setVisible(true);
+            dispose();
+        }
+
+
+
+
 }
 

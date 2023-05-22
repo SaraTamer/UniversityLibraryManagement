@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-public class Alogin extends JFrame implements ActionListener {
+public class Alogin extends JFrame {
     private JLabel IDText = new JLabel("ID");
     private JFormattedTextField IDTextField = new JFormattedTextField();
     private JLabel PassText = new JLabel("Password");
@@ -64,20 +64,35 @@ public class Alogin extends JFrame implements ActionListener {
         getContentPane().add(panel, BorderLayout.CENTER);
 
         setVisible(true);
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    registerButtonClicked();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == submit) {
-            String id = IDTextField.getText();
-            String password = PassTextField.getText();
-            loginSystem login = new loginSystem();
-            try {
-                login.Alogin(id,password);
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
+    private void registerButtonClicked() throws SQLException {
+        String ID= IDTextField.getText();
+        String password = PassTextField.getText();
+        loginSystem s = new loginSystem();
+
+        if (s.AisAuthenticated(ID,password)) {
+            Aoption OptionPage = new Aoption();
+            OptionPage.setVisible(true);
+            dispose();
+            return;
         }
-    }
+        JOptionPane.showMessageDialog(this, "Invalid email or password! Please try again", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+}
+
 
     public static void main(String[] args) throws SQLException {
         new Alogin();
