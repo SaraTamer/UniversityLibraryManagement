@@ -26,6 +26,10 @@ public class AAddBook extends JFrame {
     private JTextField publishingYearTextField = new JTextField();
     private JButton addBookButton = new JButton("Add Book");
     private JButton returnButton = new JButton("Return to Options Menu");
+    private JLabel authorNameLabel = new JLabel("Author Name:");
+    private JTextField authorNameTextField = new JTextField();
+    private JLabel authorNationLabel = new JLabel("Author Nationality:");
+    private JTextField authorNationTextField = new JTextField();
 
     private JPanel bookTitle;
 
@@ -41,7 +45,7 @@ public class AAddBook extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.NORTHWEST;
-        gbc.insets = new Insets(10, 5, 10, 5);
+        gbc.insets = new Insets(10, 20, 10, 20);
 
         // Add searchLabel
         contentPanel.add(ISBNLabel, gbc);
@@ -119,15 +123,34 @@ public class AAddBook extends JFrame {
         gbc.gridy = 5;
         contentPanel.add(publishingYearTextField, gbc);
 
-        // Add addBookButton
         gbc.gridx = 0;
         gbc.gridy = 6;
+        contentPanel.add(authorNameLabel, gbc);
+
+        // Add publishingYearTextField
+        gbc.gridx = 1;
+        gbc.gridy = 6;
+        contentPanel.add(authorNameTextField, gbc);
+
+
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        contentPanel.add(authorNationLabel, gbc);
+
+        // Add publishingYearTextField
+        gbc.gridx = 1;
+        gbc.gridy = 7;
+        contentPanel.add(authorNationTextField, gbc);
+
+        // Add addBookButton
+        gbc.gridx = 0;
+        gbc.gridy = 8;
         gbc.gridwidth = 3;
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(addBookButton, gbc);
         // Add returnButton
         gbc.gridx = 0;
-        gbc.gridy = 7;
+        gbc.gridy = 9;
         gbc.gridwidth = 3;
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(returnButton, gbc);
@@ -168,14 +191,18 @@ public class AAddBook extends JFrame {
         String language = languageTextField.getText();
         String edition = editionTextField.getText();
         String publishingYear = publishingYearTextField.getText();
+        String authorName = authorNameTextField.getText();
+        String authorNation = authorNationTextField.getText();
         Book book = new Book();
+        Author Au = new Author(authorName,authorNation,ISBN);
         book.addNewBook(ISBN, bookTitle, category, language, edition, publishingYear);
+        Au.addAuthor();
         Aoption OptionPage = new Aoption();
         OptionPage.setVisible(true);
         dispose();
     }
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
-    }*/
+    }
 }
 

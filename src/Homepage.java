@@ -71,4 +71,8 @@ public class Homepage extends JFrame {
 
         setVisible(true);
     }
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(Homepage::new);
+    }
+
 }
