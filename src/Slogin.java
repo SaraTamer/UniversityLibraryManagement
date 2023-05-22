@@ -38,6 +38,10 @@ public class Slogin extends JFrame {
 
         submit.setPreferredSize(new Dimension(100, 30));
 
+
+        Color babyBlueColor = new Color(137, 207, 240);
+        submit.setBackground(babyBlueColor);
+
         // Add components to the panel
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -91,9 +95,4 @@ public class Slogin extends JFrame {
 
     }
 
-
-
-    public static void main(String[] args) {
-        new Slogin();
-    }
 }

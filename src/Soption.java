@@ -51,8 +51,4 @@ public class Soption extends JFrame implements ActionListener {
             dispose();
         }
     }
-
-    public static void main(String[] args) {
-        new Soption();
-    }
 }

@@ -33,9 +33,9 @@ public class Astatistics extends JFrame {
         table.setModel(model);
     }
 
-    public static void main(String[] args)
+/*    public static void main(String[] args)
     {
         Astatistics statistics = new Astatistics();
         statistics.setVisible(true);
-    }
+    }*/
 }

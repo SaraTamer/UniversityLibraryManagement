@@ -88,6 +88,8 @@ public class SsignUp extends JFrame {
 
         submit.setPreferredSize(new Dimension(100, 30));
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        submit.setBackground(babyBlueColor);
 
 
         // Add components to the panel
@@ -198,8 +200,5 @@ public class SsignUp extends JFrame {
         Slogin OptionPage = new Slogin();
         OptionPage.setVisible(true);
         dispose();
-    }
-    public static void main(String[] args) {
-        new SsignUp();
     }
 }

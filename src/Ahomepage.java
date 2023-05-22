@@ -23,6 +23,10 @@ public class Ahomepage extends JFrame {
         signupButton.setPreferredSize(new Dimension(200, 60));
         logInButton.setPreferredSize(new Dimension(200, 60));
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        signupButton.setBackground(babyBlueColor);
+        logInButton.setBackground(babyBlueColor);
+
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

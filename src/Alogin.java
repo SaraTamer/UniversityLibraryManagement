@@ -59,6 +59,9 @@ public class Alogin extends JFrame {
         gbc.gridwidth = 2;
         panel.add(submit, gbc);
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        submit.setBackground(babyBlueColor);
+
         // Use a BorderLayout for the main content pane
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.CENTER);
@@ -93,11 +96,6 @@ public class Alogin extends JFrame {
 
 }
 
-
-    public static void main(String[] args) throws SQLException {
-        new Alogin();
-
-    }
 }
 
 

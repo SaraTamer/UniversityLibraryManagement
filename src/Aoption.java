@@ -76,19 +76,13 @@ public class Aoption extends JFrame implements ActionListener {
             editBookPage.setVisible(true);
             dispose();
         } else if (e.getSource() == statisticsButton) {
-/*            Astatistics stat = new Astatistics();
+            Astatistics stat = new Astatistics();
             stat.setVisible(true);
-            dispose();*/
+            dispose();
         }else if (e.getSource() == deleteStudentButton) {
             Sdelete delete = new Sdelete();
             delete.setVisible(true);
             dispose();
         }
-    }
-
-
-
-    public static void main(String[] args) {
-        new Aoption();
     }
 }

@@ -54,10 +54,6 @@ public class AAddBook extends JFrame {
 
         contentPanel.add(ISBNTextField, gbc);
 
-        // Add searchButton
-//        gbc.gridx = 2;
-//        contentPanel.add(searchButton, gbc);
-
 
         // Add bookTitleLabel
         gbc.gridx = 0;
@@ -125,30 +121,13 @@ public class AAddBook extends JFrame {
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(addBookButton, gbc);
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        addBookButton.setBackground(babyBlueColor);
+
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
         setVisible(true);
-    }
-
-//   addBookButton.addActionListener(new ActionListener() {
-//        @Override
-//        public void actionPerformed(ActionEvent e){
-//            Book();
-//        }
-//   });
-//
-//    public void setAddBookButton() {
-//        int ISBN = Integer.parseInt(ISBNTextField.getText());
-//        String bookTitle = bookTitleTextField.getText();
-//        String category = categoryTextField.getText();
-//        String language = languageTextField.getText();
-//        int edition = Integer.parseInt(editionTextField.getText());
-//        int publishingYear = Integer.parseInt(publishingYearTextField.getText());
-//        Book book = new book(ISBN, bookTitle, category, language, edition, publishingYear);
-//        Book.addBook(book);
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(AAddBook::new);
     }
 }
 
