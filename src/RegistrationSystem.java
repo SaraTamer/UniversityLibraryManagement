@@ -34,72 +34,16 @@ public class RegistrationSystem {
         return matcher.matches();
     }
 
-    public void adminSignUp() {
-        while (true) {
-            System.out.println("Enter your id: ");
-            Scanner scanner = new Scanner(System.in);
-            int id = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter your first name: ");
-            String firstName = scanner.nextLine();
-            System.out.println("Enter your last name: ");
-            String lastName = scanner.nextLine();
-            System.out.println("Enter your street: ");
-            String street = scanner.nextLine();
-            System.out.println("Enter your city: ");
-            String city = scanner.nextLine();
-            System.out.println("Enter your phone number: ");
-            String phoneNum = scanner.nextLine();
-            System.out.println("Enter your gender: ");
-            String gender = scanner.nextLine();
-            System.out.println("Enter your role: ");
-            String role = scanner.nextLine();
-            System.out.println("Enter your password: ");
-            String password = scanner.nextLine();
+    public void adminSignUp(int id,String firstName,String lastName,String city,String street
+            ,String phoneNum,String gender, String role,String password) {
             admin = new Admin(firstName, lastName, street, city, phoneNum, gender, id, role, password);
-
-            if (!isValidPassword(admin.getPassword())) {
-                System.out.println("Invalid password. Password must be at least 8 characters long and " +
-                        "contain at least one digit and one special character.");
-                continue;
-            }
-
-            if (!isValidPhoneNumber(admin.getPhoneNum())) {
-                System.out.println("Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.");
-                continue;
-            }
             insert.InsertAdminAccount(admin);
             insert.InsertAdmin(admin);
             admin.editAccID(admin.getID());
-            break;
-        }
-
     }
 
-    public void studentSignUp() {
-
-        int id;
-        String firstName, lastName;
-        while (true) {
-
-            System.out.println("Enter your id: ");
-            Scanner scanner = new Scanner(System.in);
-            id = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter your first name: ");
-            firstName = scanner.nextLine();
-            System.out.println("Enter your last name: ");
-            lastName = scanner.nextLine();
-            System.out.println("Enter your street: ");
-            String street = scanner.nextLine();
-            System.out.println("Enter your city: ");
-            String city = scanner.nextLine();
-            System.out.println("Enter your phone number: ");
-            String phoneNum = scanner.nextLine();
-            System.out.println("Enter your gender: ");
-            String gender = scanner.nextLine();
-            System.out.println("Enter your department: ");
-            String department = scanner.nextLine();
-            System.out.println("Enter your password: ");
-            String password = scanner.nextLine();
+    public void studentSignUp(int id,String firstName,String lastName,String city,String street
+            ,String phoneNum,String gender, String department,String password) {
             student = new Student(id,firstName, lastName, city,street, phoneNum, gender, department, password);
             student.setFirstName(firstName);
             student.setLastName(lastName);
@@ -110,22 +54,8 @@ public class RegistrationSystem {
             student.setDepartment(department);
             student.setPassword(password);
             student.setGender(gender);
-
-            if (!isValidPassword(student.getPassword())) {
-                System.out.println("Invalid password. Password must be at least 8 characters long and " +
-                        "contain at least one digit and one special character.");
-                continue;
-            }
-
-            if (!isValidPhoneNumber(student.getPhoneNum())) {
-                System.out.println("Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.");
-                continue;
-            }
             insert.InsertStudentAccount(student);
             insert.InsertStudent(student);
             student.editAccID(student.getID());
-            break;
-        }
-
     }
 }

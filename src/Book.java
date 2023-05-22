@@ -9,10 +9,11 @@ public class Book {
     private String language;
     private String Edition;
     private String publishingYear;
+    private String author;
     public Book(){
 
     }
-    public void Book(int ISBN,String title,String Category,String language,String Edition,String publishingYear){
+    public Book(int ISBN,String title,String Category,String language,String Edition,String publishingYear){
         this.ISBN = ISBN;
         this.title = title;
         this.Category = Category;
@@ -36,7 +37,7 @@ public class Book {
         return false;
     }
     //add new book to the database table book
-    public void addNewBook(int ISBN,String title,String Category,String languge,String Edition,String publisingYear){
+    public void addNewBook(int ISBN, String title, String Category, String languge, String Edition, String publisingYear){
         boolean check = false;
         String query = "insert into book values(?,?,?,?,?,?)";
         try {
@@ -174,4 +175,6 @@ public class Book {
     }
 
 
+    public void setAuthor(String author){this.author = author;}
+    public String getAuthor(){return author;}
 }

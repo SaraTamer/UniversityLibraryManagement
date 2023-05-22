@@ -1,0 +1,143 @@
+Index: src/StudentFunctionality.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class StudentFunctionality {\r\n}\r\n
+===================================================================
+diff --git a/src/StudentFunctionality.java b/src/StudentFunctionality.java
+--- a/src/StudentFunctionality.java	
++++ b/src/StudentFunctionality.java	
+@@ -1,2 +1,134 @@
++import java.sql.CallableStatement;
++import java.sql.Connection;
++import java.sql.PreparedStatement;
++import java.sql.ResultSet;
++import java.util.ArrayList;
++
+ public class StudentFunctionality {
++
++    Connection connection = null;
++    PreparedStatement ps = null;
++    CallableStatement callableStatement = null;
++    ResultSet resultSet = null;
++
++    public ArrayList<String> viewAllBooks()
++    {
++        ArrayList userList = new ArrayList();
++        String query = "select * from Book";
++        String header = "ISBN  |    Title    |  Category  |  Language  | Edition | Publishing Year ";
++        userList.add(header);
++        try {
++            connection = DatabaseConnection.getConnection();
++            ps = connection.prepareStatement(query);
++            resultSet = ps.executeQuery();
++            while (resultSet.next()) {
++                int id = resultSet.getInt("ISBN");
++                String Title = resultSet.getString("Title");
++                String Category = resultSet.getString("Category");
++                String Language = resultSet.getString("Language");
++                String Edition = resultSet.getString("Edition");
++                String year = resultSet.getString("PublishingYear");
++                userList.add(id + " " + Title + " " + Category + " " + Language + " " + Edition + " " + year + '\n');
++
++            }
++        } catch (Exception e) {
++            System.out.println("com.Models.user.SelectAllUsers(): " + e.getMessage());
++        } finally {
++            // Close the resources
++            try {
++                if (resultSet != null) {
++                    resultSet.close();
++                }
++                if (ps != null) {
++                    ps.close();
++                }
++                if (connection != null) {
++                    connection.close();
++                }
++            } catch (Exception e) {
++                System.out.println("Error closing database resources: " + e.getMessage());
++            }
++        }
++        return userList;
++    }
++    public ArrayList<String> searchByISBN(int ISBN)
++    {
++        ArrayList userList = new ArrayList();
++        String query = "select * from Book where ISBN = ?";
++        String header = "ISBN  |    Title    |  Category  |  Language  | Edition | Publishing Year ";
++        userList.add(header);
++        try {
++            connection = DatabaseConnection.getConnection();
++            ps = connection.prepareStatement(query);
++            ps.setInt(1, ISBN);
++            resultSet = ps.executeQuery();
++            while (resultSet.next()) {
++                int id = resultSet.getInt("ISBN");
++                String Title = resultSet.getString("Title");
++                String Category = resultSet.getString("Category");
++                String Language = resultSet.getString("Language");
++                String Edition = resultSet.getString("Edition");
++                String year = resultSet.getString("PublishingYear");
++                userList.add( id + Title + Category + Language + Edition + year + '\n');
++            }
++        } catch (Exception e) {
++            System.out.println("com.Models.user.searchByISBN(): " + e.getMessage());
++        } finally {
++            // Close the resources
++            try {
++                if (resultSet != null) {
++                    resultSet.close();
++                }
++                if (ps != null) {
++                    ps.close();
++                }
++                if (connection != null) {
++                    connection.close();
++                }
++            } catch (Exception e) {
++                System.out.println("Error closing database resources: " + e.getMessage());
++            }
++        }
++        return userList;
++    }
++    public ArrayList<String> searchByTitle(String title)
++    {
++        ArrayList userList = new ArrayList();
++        String query = "select * from Book where Title = ?";
++        String header = "ISBN  |    Title    |  Category  |  Language  | Edition | Publishing Year ";
++        userList.add(header);
++        try {
++            connection = DatabaseConnection.getConnection();
++            ps = connection.prepareStatement(query);
++            ps.setString(1, title);
++            resultSet = ps.executeQuery();
++            while (resultSet.next()) {
++                int id = resultSet.getInt("ISBN");
++                String Title = resultSet.getString("Title");
++                String Category = resultSet.getString("Category");
++                String Language = resultSet.getString("Language");
++                String Edition = resultSet.getString("Edition");
++                String year = resultSet.getString("PublishingYear");
++                userList.add( id + Title + Category + Language + Edition + year + '\n');
++            }
++        } catch (Exception e) {
++            System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
++        } finally {
++            // Close the resources
++            try {
++                if (resultSet != null) {
++                    resultSet.close();
++                }
++                if (ps != null) {
++                    ps.close();
++                }
++                if (connection != null) {
++                    connection.close();
++                }
++            } catch (Exception e) {
++                System.out.println("Error closing database resources: " + e.getMessage());
++            }
++        }
++        return userList;
++    }
+ }

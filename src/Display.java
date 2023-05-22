@@ -5,14 +5,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Display {
-    public void viewAllBooks() throws SQLException {
+    public ArrayList<Book> viewAllBooks() throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
 
         try {
             connection = DatabaseConnection.getConnection();
@@ -28,9 +26,10 @@ public class Display {
                 String publishingYear = resultSet.getString("PublisingYear");
                 String author = resultSet.getString("Name");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        id, title, category, language, edition, publishingYear, author);
-                bookList.add(bookInfo);
+                Book book = new Book(id,title, category,language, edition, publishingYear);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.viewAllBooks(): " + e.getMessage());
@@ -50,18 +49,14 @@ public class Display {
             }
         }
 
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+       return bookList;
     }
-    public void searchByTitle(String title) throws SQLException {
+    public ArrayList<Book> searchByTitle(String title) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and title = ?";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
 
         try {
             connection = DatabaseConnection.getConnection();
@@ -77,15 +72,17 @@ public class Display {
                 String publishingYear = resultSet.getString("PublisingYear");
                 String author = resultSet.getString("Name");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        id, title, category, language, edition, publishingYear, author);
-                bookList.add(bookInfo);
+                Book book = new Book(id,title, category,language, edition, publishingYear);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
         } finally {
             try {
-                if (resultSet != null) {
+                if(resultSet != null)
+                {
                     resultSet.close();
                 }
                 if (ps != null) {
@@ -98,24 +95,19 @@ public class Display {
                 System.out.println("Error closing database resources: " + e.getMessage());
             }
         }
-
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+        return bookList;
     }
-    public void searchByISBN(int ISBN) throws SQLException {
+    public ArrayList<Book> searchByISBN(String ISBN) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and b.isbn = ?";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
 
         try {
             connection = DatabaseConnection.getConnection();
             ps = connection.prepareStatement(query);
-            ps.setInt(1, ISBN);  // Set the title parameter in the query
+            ps.setInt(1, Integer.parseInt(ISBN));  // Set the title parameter in the query
             resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
@@ -126,9 +118,10 @@ public class Display {
                 String publishingYear = resultSet.getString("PublisingYear");
                 String author = resultSet.getString("Name");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        ISBN, title, category, language, edition, publishingYear, author);
-                bookList.add(bookInfo);
+                Book book = new Book(Integer.parseInt(ISBN),title, category,language, edition, publishingYear);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
@@ -148,18 +141,14 @@ public class Display {
             }
         }
 
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+        return bookList;
     }
-    public void searchByCategory(String category) throws SQLException {
+    public ArrayList<Book> searchByCategory(String category) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and category = ?";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
 
         try {
             connection = DatabaseConnection.getConnection();
@@ -175,15 +164,17 @@ public class Display {
                 String publishingYear = resultSet.getString("PublisingYear");
                 String author = resultSet.getString("Name");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        ISBN, title, category, language, edition, publishingYear, author);
-                bookList.add(bookInfo);
+                Book book = new Book(ISBN,title, category,language, edition, publishingYear);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
         } finally {
             try {
-                if (resultSet != null) {
+                if(resultSet != null)
+                {
                     resultSet.close();
                 }
                 if (ps != null) {
@@ -197,18 +188,18 @@ public class Display {
             }
         }
 
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+//        for (String bookInfo : bookList) {
+//            System.out.println(bookInfo);
+//        }
+        return bookList;
     }
-    public void searchByAuthor(String author) throws SQLException {
+    public ArrayList<Book> searchByAuthor(String author) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and name = ?";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
+
 
         try {
             connection = DatabaseConnection.getConnection();
@@ -224,9 +215,10 @@ public class Display {
                 String edition = resultSet.getString("Edition");
                 String publishingYear = resultSet.getString("PublisingYear");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        ISBN, title, category, language, edition, publishingYear, author);
-                bookList.add(bookInfo);
+                Book book = new Book(ISBN,title, category,language, edition, publishingYear);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
@@ -246,18 +238,14 @@ public class Display {
             }
         }
 
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+        return bookList;
     }
-    public void searchByYear(String year) throws SQLException {
+    public ArrayList<Book> searchByYear(String year) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and publisingYear = ?";
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement ps = null;
-        ArrayList<String> bookList = new ArrayList<>();
-        bookList.add(String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s" ,
-                "ISBN", "Title", "Category", "Language", "Edition", "Publishing Year" , "Author" ));
+        ArrayList<Book> bookList = new ArrayList<>();
 
         try {
             connection = DatabaseConnection.getConnection();
@@ -273,9 +261,10 @@ public class Display {
                 String edition = resultSet.getString("Edition");
                 String author = resultSet.getString("name");
 
-                String bookInfo = String.format("%-10s | %-20s | %-20s | %-10s | %-7s | %-20s | %s",
-                        ISBN, title, category, language, edition, year, author);
-                bookList.add(bookInfo);
+                Book book = new Book(ISBN,title, category,language, edition, year);
+                book.setAuthor(author);
+
+                bookList.add(book);
             }
         } catch (Exception e) {
             System.out.println("com.Models.user.searchByTitle(): " + e.getMessage());
@@ -295,9 +284,7 @@ public class Display {
             }
         }
 
-        for (String bookInfo : bookList) {
-            System.out.println(bookInfo);
-        }
+        return bookList;
     }
 
 }
