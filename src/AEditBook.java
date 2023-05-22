@@ -125,6 +125,7 @@ public class AEditBook extends JFrame {
         Color babyBlueColor = new Color(137, 207, 240);
         addBookButton.setBackground(babyBlueColor);
         searchButton.setBackground(babyBlueColor);
+
         setVisible(true);
         addBookButton.addActionListener(new ActionListener() {
             @Override
@@ -184,7 +185,9 @@ public class AEditBook extends JFrame {
 
     }
 
+/*
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AEditBook::new);
     }
+*/
 }

@@ -151,8 +151,10 @@ public class AAddBook extends JFrame {
         OptionPage.setVisible(true);
         dispose();
     }
+/*
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
     }
+*/
 }
 
