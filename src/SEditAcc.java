@@ -33,14 +33,15 @@ public class SEditAcc extends JFrame implements ActionListener {
 
 
         id = new JTextField(loginSystem.student.getID());
+        id.setText(String.valueOf(loginSystem.student.getID()));
         id.setEnabled(false);
-        firstName = new JTextField(20);
-        lastName = new JTextField(20);
-        City = new JTextField(20);
-        Street = new JTextField(20);
-        phoneNum = new JTextField(20);
-        Department = new JTextField(20);
-        Password = new JTextField(20);
+        firstName = new JTextField(loginSystem.student.getFirstName());
+        lastName = new JTextField(loginSystem.student.getLastName());
+        City = new JTextField(loginSystem.student.getCity());
+        Street = new JTextField(loginSystem.student.getStreet());
+        phoneNum = new JTextField(loginSystem.student.getPhoneNum());
+        Department = new JTextField(loginSystem.student.getDepartment());
+        Password = new JTextField(loginSystem.student.getPassword());
 
 
         saveButton = new JButton("Save");
@@ -116,13 +117,13 @@ public class SEditAcc extends JFrame implements ActionListener {
             String newdep = Department.getText();
             String newPassword = Password.getText();
 
-            loginSystem.student.editfName(Integer.parseInt(String.valueOf(id)), newFirstName);
-            loginSystem.student.editlName(Integer.parseInt(String.valueOf(id)), newLastName);
-            loginSystem.student.editCity(Integer.parseInt(String.valueOf(id)), newCity);
-            loginSystem.student.editStreet(Integer.parseInt(String.valueOf(id)), newStreet);
-            loginSystem.student.editPhone(Integer.parseInt(String.valueOf(id)), newPhone);
-            loginSystem.student.editDep(Integer.parseInt(String.valueOf(id)), newdep);
-            loginSystem.student.editPass(Integer.parseInt(String.valueOf(id)), newPassword);
+            loginSystem.student.editfName(loginSystem.student.getID(), newFirstName);
+            loginSystem.student.editlName(loginSystem.student.getID(), newLastName);
+            loginSystem.student.editCity(loginSystem.student.getID(), newCity);
+            loginSystem.student.editStreet(loginSystem.student.getID(), newStreet);
+            loginSystem.student.editPhone(loginSystem.student.getID(), newPhone);
+            loginSystem.student.editDep(loginSystem.student.getID(), newdep);
+            loginSystem.student.editPass(loginSystem.student.getID(), newPassword);
 
             // Display a message dialog to inform the user about the successful update
             JOptionPane.showMessageDialog(this, "Account information updated successfully!");
