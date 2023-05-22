@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="adding display class">
-      <change afterPath="$PROJECT_DIR$/src/Homepage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ahomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ahomepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shomepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsearchBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsignUp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homepage.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homepage.java" beforeDir="false" />
-    </list>
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Browsing books GUI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +19,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
