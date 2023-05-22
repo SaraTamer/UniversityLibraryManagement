@@ -121,6 +121,10 @@ public class AEditBook extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
+
+        Color babyBlueColor = new Color(137, 207, 240);
+        addBookButton.setBackground(babyBlueColor);
+        searchButton.setBackground(babyBlueColor);
         setVisible(true);
         addBookButton.addActionListener(new ActionListener() {
             @Override

@@ -25,6 +25,10 @@ public class Homepage extends JFrame {
         adminButton.setPreferredSize(new Dimension(150, 50));
         studentButton.setPreferredSize(new Dimension(150, 50));
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        adminButton.setBackground(babyBlueColor);
+        studentButton.setBackground(babyBlueColor);
+
         adminButton.addActionListener(new ActionListener()
         {
             @Override
@@ -66,10 +70,5 @@ public class Homepage extends JFrame {
         getContentPane().add(buttonPanel, BorderLayout.CENTER);
 
         setVisible(true);
-    }
-
-    public static void main(String[] args)
-    {
-        new Homepage();
     }
 }

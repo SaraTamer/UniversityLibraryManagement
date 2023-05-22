@@ -15,7 +15,7 @@ public class Slogin extends JFrame {
     public Slogin() {
         setTitle("Log in");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(900, 800);
         setLocationRelativeTo(null);
 
         // Create a panel with GridBagLayout
@@ -37,6 +37,10 @@ public class Slogin extends JFrame {
         PassTextField.setPreferredSize(textFieldSize);
 
         submit.setPreferredSize(new Dimension(100, 30));
+
+
+        Color babyBlueColor = new Color(137, 207, 240);
+        submit.setBackground(babyBlueColor);
 
         // Add components to the panel
         gbc.gridx = 0;
@@ -91,9 +95,4 @@ public class Slogin extends JFrame {
 
     }
 
-
-
-    public static void main(String[] args) {
-        new Slogin();
-    }
 }

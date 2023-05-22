@@ -122,13 +122,11 @@ public class SEditAcc extends JFrame implements ActionListener {
             // Close the AdminEditAcc form
             dispose();
         } else if (e.getSource() == cancelButton) {
+            Soption soption = new Soption();
+            soption.setVisible(true);
             // Close the AdminEditAcc form without saving changes
             dispose();
         }
 
     }
-    public static void main (String[]args){
-        new SEditAcc();
-    }
-
 }

@@ -46,13 +46,9 @@ public class Soption extends JFrame implements ActionListener {
             editPage.setVisible(true);
             dispose();
         } else if (e.getSource() == displayBookButton) {
-           // browsingBooks browsePage = new browsingBooks();
-           // browsePage.setVisible(true);
+            browsingBooks browsePage = new browsingBooks();
+            browsePage.setVisible(true);
             dispose();
         }
-    }
-
-    public static void main(String[] args) {
-        new Soption();
     }
 }

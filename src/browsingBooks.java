@@ -18,6 +18,10 @@ public class browsingBooks extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        searchButton.setBackground(babyBlueColor);
+
+
         // Create a panel for search components
         JPanel searchPanel = new JPanel();
         searchCriteriaComboBox = new JComboBox<>(new String[]{"ISBN", "Title", "Category", "Author", "Publishing Year"});
@@ -119,8 +123,5 @@ public class browsingBooks extends JFrame {
         }
 
         setVisible(true);
-    }
-    public static void main(String[] args) {
-       new browsingBooks();
     }
 }

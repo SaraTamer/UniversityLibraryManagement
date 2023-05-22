@@ -193,61 +193,81 @@ public class Student {
                 System.out.println("com.Models.Student.editDep(): " + e.getMessage());
             }
         }
-    public void editPass ( int id, String newPass) {
-        if (!RegistrationSystem.isValidPassword(newPass)) return;
-        String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM student where S_ID = ?)";
-        try {
-            Connection connection = DatabaseConnection.getConnection();
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, newPass);
-            ps.setInt(2, id);
-            int rowsAffected = ps.executeUpdate();
+        public void editPass ( int id, String newPass) {
+            if (!RegistrationSystem.isValidPassword(newPass)) return;
+            String query = "update account set Password = ? where ACC_ID = (SELECT ACC_ID FROM student where S_ID = ?)";
+            try {
+                Connection connection = DatabaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(query);
+                ps.setString(1, newPass);
+                ps.setInt(2, id);
+                int rowsAffected = ps.executeUpdate();
 
-            if (rowsAffected > 0) {
-                System.out.println("Student password updated successfully.");
-            } else {
-                System.out.println("No rows were affected. Student password not found or not modified.");
-            }
-        } catch (Exception e) {
-            System.out.println("com.Models.Student.editPass(): " + e.getMessage());
-        }
-    }
-    public void editAccID(int id) {
-        String query = "UPDATE student SET ACC_ID = (SELECT MAX(ACC_ID) FROM account) WHERE S_ID = ?";
-        try {
-            Connection connection = DatabaseConnection.getConnection();
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, id);
-            int rowsAffected = ps.executeUpdate();
-
-            if (rowsAffected > 0) {
-                System.out.println("Student account ID updated successfully.");
-            } else {
-                System.out.println("No rows were affected. Student ID not found or account ID not updated.");
-            }
-        } catch (Exception e) {
-            System.out.println("com.Models.Student.editAccID(): " + e.getMessage());
-        }
-    }
-    public void editlName(int id, String newName)
-    {
-        String query = "update Student set LastName = ? where S_ID = ?";
-        try {
-            Connection connection = DatabaseConnection.getConnection();
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, newName);
-            ps.setInt(2, id);
-            int rowsAffected = ps.executeUpdate();
-
-            if (rowsAffected > 0) {
-                System.out.println("Student last name updated successfully.");
-            } else {
-                System.out.println("No rows were affected. Student data not found or not modified.");
+                if (rowsAffected > 0) {
+                    System.out.println("Student password updated successfully.");
+                } else {
+                    System.out.println("No rows were affected. Student password not found or not modified.");
+                }
+            } catch (Exception e) {
+                System.out.println("com.Models.Student.editPass(): " + e.getMessage());
             }
         }
-        catch (Exception e) {
-            System.out.println("com.Models.Student.editlName(): " + e.getMessage());
+        public void editAccID(int id) {
+            String query = "UPDATE student SET ACC_ID = (SELECT MAX(ACC_ID) FROM account) WHERE S_ID = ?";
+            try {
+                Connection connection = DatabaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(query);
+                ps.setInt(1, id);
+                int rowsAffected = ps.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Student account ID updated successfully.");
+                } else {
+                    System.out.println("No rows were affected. Student ID not found or account ID not updated.");
+                }
+            } catch (Exception e) {
+                System.out.println("com.Models.Student.editAccID(): " + e.getMessage());
+            }
         }
-    }
+        public void editlName(int id, String newName)
+        {
+            String query = "update Student set LastName = ? where S_ID = ?";
+            try {
+                Connection connection = DatabaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(query);
+                ps.setString(1, newName);
+                ps.setInt(2, id);
+                int rowsAffected = ps.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Student last name updated successfully.");
+                } else {
+                    System.out.println("No rows were affected. Student data not found or not modified.");
+                }
+            }
+            catch (Exception e) {
+                System.out.println("com.Models.Student.editlName(): " + e.getMessage());
+            }
+        }
+
+        public void deleteStudent(int id)
+        {
+            String query = "delete from student where S_ID = ?";
+            try {
+                Connection connection = DatabaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(query);
+                ps.setInt(1, id);
+                int rowsAffected = ps.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Student deleted successfully.");
+                } else {
+                    System.out.println("No rows were affected. Student not found or not deleted.");
+                }
+            }
+            catch (Exception e) {
+                System.out.println("com.Models.Student.deleteStudent(): " + e.getMessage());
+            }
+        }
 }
 

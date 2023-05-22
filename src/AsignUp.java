@@ -36,7 +36,7 @@ public class AsignUp extends JFrame {
     public AsignUp() {
         setTitle("Sign Up");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(900, 800);
         setLocationRelativeTo(null);
 
         // Create a panel with GridBagLayout
@@ -88,6 +88,35 @@ public class AsignUp extends JFrame {
 
         submit.setPreferredSize(new Dimension(100, 30));
 
+
+        fnameText.setPreferredSize(new Dimension(150, 30));
+        fnameTextField.setPreferredSize(new Dimension(400, 30));
+
+        lnameText.setPreferredSize(new Dimension(150, 30));
+        lnameTextField.setPreferredSize(new Dimension(400, 30));
+
+        IDText.setPreferredSize(new Dimension(150, 30));
+        IDTextField.setPreferredSize(new Dimension(400, 30));
+
+        CityText.setPreferredSize(new Dimension(150, 30));
+        CityTextField.setPreferredSize(new Dimension(400, 30));
+
+        StreetText.setPreferredSize(new Dimension(150, 30));
+        StreetTextField.setPreferredSize(new Dimension(400, 30));
+
+        PHText.setPreferredSize(new Dimension(150, 30));
+        PHTextField.setPreferredSize(new Dimension(400, 30));
+
+        genderText.setPreferredSize(new Dimension(150, 30));
+        genderTextField.setPreferredSize(new Dimension(400, 30));
+
+        RoleText.setPreferredSize(new Dimension(150, 30));
+        RoleTextField.setPreferredSize(new Dimension(400, 30));
+
+        passText.setPreferredSize(new Dimension(150, 30));
+        passTextField.setPreferredSize(new Dimension(400, 30));
+
+        submit.setPreferredSize(new Dimension(100, 30));
 
 
         // Add components to the panel
@@ -161,7 +190,8 @@ public class AsignUp extends JFrame {
         gbc.gridwidth = 2;
         panel.add(submit, gbc);
 
-
+        Color babyBlueColor = new Color(137, 207, 240);
+        submit.setBackground(babyBlueColor);
         // Use a BorderLayout for the main content pane
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.NORTH);
