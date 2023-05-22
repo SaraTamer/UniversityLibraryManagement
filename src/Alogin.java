@@ -64,7 +64,6 @@ public class Alogin extends JFrame implements ActionListener {
         getContentPane().add(panel, BorderLayout.CENTER);
 
         setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -85,3 +84,5 @@ public class Alogin extends JFrame implements ActionListener {
 
     }
 }
+
+

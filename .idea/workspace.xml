@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="adding display class">
+      <change afterPath="$PROJECT_DIR$/src/Homepage.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditAcc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ahomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ahomepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SEditAcc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Soption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shomepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsearchBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsignUp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homepage.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homepage.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +86,13 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RunManager">
@@ -144,30 +158,31 @@
       <option name="project" value="LOCAL" />
       <updated>1684358813166</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Home Pages GUI">
+      <created>1684692039840</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684692039840</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="In the name of God." />
     <MESSAGE value="insert added" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Display.java</url>
-          <line>7</line>
-          <properties class="Display" method="viewAllBooks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Home Pages GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home Pages GUI" />
   </component>
 </project>
