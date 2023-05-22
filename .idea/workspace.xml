@@ -10,18 +10,12 @@
       <change beforePath="$PROJECT_DIR$/src/AAddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAddBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditAcc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AEditBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Astatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Astatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SEditAcc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sdelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sdelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditAcc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ahomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ahomepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Astatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Astatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SEditAcc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sdelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sdelete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shomepage.java" afterDir="false" />
@@ -44,7 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -93,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Slogin">
+  <component name="RunManager" selected="Application.Homepage">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -161,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Slogin" />
         <item itemvalue="Application.Homepage" />
+        <item itemvalue="Application.Slogin" />
         <item itemvalue="Application.SsignUp" />
         <item itemvalue="Application.AsignUp" />
         <item itemvalue="Application.Alogin" />
