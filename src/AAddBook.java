@@ -147,7 +147,6 @@ public class AAddBook extends JFrame {
 //        int publishingYear = Integer.parseInt(publishingYearTextField.getText());
 //        Book book = new book(ISBN, bookTitle, category, language, edition, publishingYear);
 //        Book.addBook(book);
-//    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
     }
