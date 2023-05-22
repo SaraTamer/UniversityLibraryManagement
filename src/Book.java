@@ -37,7 +37,7 @@ public class Book {
         return false;
     }
     //add new book to the database table book
-    public void addNewBook(int ISBN,String title,String Category,String languge,String Edition,String publisingYear){
+    public void addNewBook(int ISBN, String title, String Category, String languge, String Edition, String publisingYear){
         boolean check = false;
         String query = "insert into book values(?,?,?,?,?,?)";
         try {

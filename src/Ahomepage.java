@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Ahomepage extends JFrame {
     private JButton signupButton;
@@ -36,7 +37,12 @@ public class Ahomepage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add your log in logic here
-                Alogin alogin = new Alogin();
+                Alogin alogin = null;
+                try {
+                    alogin = new Alogin();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 alogin.setVisible(true);
                 dispose(); // Close the login form
             }

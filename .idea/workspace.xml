@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Browsing books GUI">
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="adding display class">
+      <change afterPath="$PROJECT_DIR$/src/Homepage.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Homepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ahomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ahomepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shomepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsearchBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsignUp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SsignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SsignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homepage.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homepage.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +63,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
-    "full.screen.before.presentation.mode": "false",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -134,21 +150,7 @@
       <option name="project" value="LOCAL" />
       <updated>1684692039840</updated>
     </task>
-    <task id="LOCAL-00005" summary="Search page GUI">
-      <created>1684705713573</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684705713573</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Browsing books GUI">
-      <created>1684707250268</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684707250268</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -166,19 +168,6 @@
     <MESSAGE value="In the name of God." />
     <MESSAGE value="insert added" />
     <MESSAGE value="Home Pages GUI" />
-    <MESSAGE value="Search page GUI" />
-    <MESSAGE value="Browsing books GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Browsing books GUI" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Display.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Home Pages GUI" />
   </component>
 </project>
