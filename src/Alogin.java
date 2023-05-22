@@ -15,7 +15,7 @@ public class Alogin extends JFrame {
     public Alogin() throws SQLException {
         setTitle("Log in");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(900, 800);
         setLocationRelativeTo(null);
 
         // Create a panel with GridBagLayout

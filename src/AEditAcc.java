@@ -127,6 +127,8 @@ public class AEditAcc extends JFrame implements ActionListener {
                 // Close the AdminEditAcc form
                 dispose();
             } else if (e.getSource() == cancelButton) {
+                Aoption aoption = new Aoption();
+                aoption.setVisible(true);
                 // Close the AdminEditAcc form without saving changes
                 dispose();
             }

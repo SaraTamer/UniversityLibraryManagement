@@ -13,11 +13,10 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3d2797b2-ffc1-49f6-b24b-332b0efa0777">
-      <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
+      <console name="Connection" type="STANDARD" schema="mylibrary" session="Main"><![CDATA[select * from student]]></console>
     </connection>
     <connection id="62600127-94d8-4937-927e-d1f774bbb45d">
-      <console name="Connection 1" type="STANDARD" schema="libar" session="Pool"><![CDATA[select * from student
-select * from admin]]></console>
+      <console name="Connection 1" type="STANDARD" schema="mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">

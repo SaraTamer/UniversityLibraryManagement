@@ -36,7 +36,7 @@ public class AsignUp extends JFrame {
     public AsignUp() {
         setTitle("Sign Up");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(900, 800);
         setLocationRelativeTo(null);
 
         // Create a panel with GridBagLayout
