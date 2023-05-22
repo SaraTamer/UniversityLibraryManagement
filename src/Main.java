@@ -18,8 +18,8 @@ public class Main {
 //        book.addNewBook(1234567890, "CS", "CS", "English", "1", "2023");
 //        book.addNewBook(1234544490, "Intro to CS", "CS", "English", "1", "2022");
 
-//        Author author = new Author("Perry Donham", "English", 1234544490);
-//        author.addAuthor();
+        Author author = new Author("Perry Donham", "English", 102);
+        author.addAuthor();
 //        Author author1 = new Author("Justin Zobel", "English", 1234567890);
 //        author1.addAuthor();
 //

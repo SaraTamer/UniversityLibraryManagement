@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -129,25 +128,29 @@ public class AAddBook extends JFrame {
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
         setVisible(true);
+        addBookButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Book();
+            }
+        });
     }
 
-//   addBookButton.addActionListener(new ActionListener() {
-//        @Override
-//        public void actionPerformed(ActionEvent e){
-//            Book();
-//        }
-//   });
-//
-//    public void setAddBookButton() {
-//        int ISBN = Integer.parseInt(ISBNTextField.getText());
-//        String bookTitle = bookTitleTextField.getText();
-//        String category = categoryTextField.getText();
-//        String language = languageTextField.getText();
-//        int edition = Integer.parseInt(editionTextField.getText());
-//        int publishingYear = Integer.parseInt(publishingYearTextField.getText());
-//        Book book = new book(ISBN, bookTitle, category, language, edition, publishingYear);
-//        Book.addBook(book);
-//    }
+
+
+    public void Book() {
+        int ISBN = Integer.parseInt(ISBNTextField.getText());
+        String bookTitle = bookTitleTextField.getText();
+        String category = categoryTextField.getText();
+        String language = languageTextField.getText();
+        String edition = editionTextField.getText();
+        String publishingYear = publishingYearTextField.getText();
+        Book book = new Book();
+        book.addNewBook(ISBN, bookTitle, category, language, edition, publishingYear);
+        Aoption OptionPage = new Aoption();
+        OptionPage.setVisible(true);
+        dispose();
+    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
     }

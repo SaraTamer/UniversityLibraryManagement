@@ -1,5 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -118,6 +122,62 @@ public class AEditBook extends JFrame {
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
         setVisible(true);
+        addBookButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Book();
+            }
+        });
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try {
+                    searchBook();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
+    public void Book() {
+        Book book = new Book();
+        String ISBN = searchISBNTextField.getText();
+        String title =  bookTitleTextField.getText();
+        String category =  categoryTextField.getText();
+        String language = languageTextField.getText();
+        String edition =editionTextField.getText();
+        String publishingYear = publishingYearTextField.getText();
+        book.updateBookTitle(Integer.parseInt(ISBN),title);
+        book.updateBookCategory(Integer.parseInt(ISBN),category);
+        book.updateBookEdition(Integer.parseInt(ISBN),language);
+        book.updateBookLanguage(Integer.parseInt(ISBN),edition);
+        book.updateBookPublisingYear(Integer.parseInt(ISBN),publishingYear);
+        Aoption OptionPage = new Aoption();
+        OptionPage.setVisible(true);
+        dispose();
+    }
+    public void searchBook() throws SQLException {
+        String ISBN = searchISBNTextField.getText();
+        ArrayList<Book> bookList;
+        bookList = Display.searchByISBN(ISBN);
+        if (!bookList.isEmpty()) {
+            Book book = bookList.get(0);
+            String bookTitle = book.getTitle();
+            String category = book.getCategory();
+            String language = book.getLanguage();
+            String edition = book.getEdition();
+            String publishingYear = book.getPublishingYear();
+            bookTitleTextField.setText(bookTitle);
+            categoryTextField.setText(category);
+            languageTextField.setText(language);
+            editionTextField.setText(edition);
+            publishingYearTextField.setText(publishingYear);
+        }else{
+            JOptionPane.showMessageDialog(this, "Invalid ISBN!"
+                    , "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
     }
 
     public static void main(String[] args) {

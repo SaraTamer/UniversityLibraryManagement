@@ -97,7 +97,7 @@ public class Display {
         }
         return bookList;
     }
-    public ArrayList<Book> searchByISBN(String ISBN) throws SQLException {
+    public static ArrayList<Book> searchByISBN(String ISBN) throws SQLException {
         String query = "SELECT * FROM book as b, author as a WHERE b.ISBN = a.ISBN and b.isbn = ?";
         ResultSet resultSet = null;
         Connection connection = null;
