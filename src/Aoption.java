@@ -7,14 +7,13 @@ public class Aoption extends JFrame implements ActionListener {
     private JButton editAccountButton;
     private JButton addBookButton;
     private JButton editBookButton;
-    private JButton deleteBookButton;
     private JButton deleteStudentButton;
     private JButton statisticsButton;
 
     Aoption(){
         setTitle("Admin Options");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 400);
+        setSize(300, 300);
 
         JLabel titleLabel = new JLabel("Admin Functionalities:");
         titleLabel.setBounds(50, 10, 200, 20);
@@ -26,7 +25,6 @@ public class Aoption extends JFrame implements ActionListener {
         addBookButton = new JButton("Add Book");
         editBookButton = new JButton("Edit Book Details");
         statisticsButton = new JButton("View Books statistics");
-        deleteBookButton = new JButton("Delete a Book");
         deleteStudentButton = new JButton("Delete a Student");
 
         // Set button positions
@@ -34,8 +32,7 @@ public class Aoption extends JFrame implements ActionListener {
         addBookButton.setBounds(50, 70, 200, 30);
         editBookButton.setBounds(50, 110, 200, 30);
         statisticsButton.setBounds(50, 150, 200, 30);
-        deleteBookButton.setBounds(50, 190, 200, 30);
-        deleteStudentButton.setBounds(50, 230, 200, 30);
+        deleteStudentButton.setBounds(50, 190, 200, 30);
 
 
 
@@ -44,7 +41,6 @@ public class Aoption extends JFrame implements ActionListener {
         editAccountButton.setBackground(babyBlueColor);
         editBookButton.setBackground(babyBlueColor);
         statisticsButton.setBackground(babyBlueColor);
-        deleteBookButton.setBackground(babyBlueColor);
         deleteStudentButton.setBackground(babyBlueColor);
 
 
@@ -53,14 +49,12 @@ public class Aoption extends JFrame implements ActionListener {
         add(addBookButton);
         add(editBookButton);
         add(statisticsButton);
-        add(deleteBookButton);
         add(deleteStudentButton);
         // Add action listeners to the buttons
         editAccountButton.addActionListener(this);
         addBookButton.addActionListener(this);
         editBookButton.addActionListener(this);
         statisticsButton.addActionListener(this);
-        deleteBookButton.addActionListener(this);
         deleteStudentButton.addActionListener(this);
 
         setLayout(null);
@@ -84,14 +78,10 @@ public class Aoption extends JFrame implements ActionListener {
         } else if (e.getSource() == statisticsButton) {
 
              dispose();
-        }else if (e.getSource() == deleteBookButton) {
-            Book book = new Book();
-            book.
-            JOptionPane.showMessageDialog(this, "Book was deleted successfully!");
-            dispose();
         }else if (e.getSource() == deleteStudentButton) {
-
-
+            Sdelete delete = new Sdelete();
+           // delete.setVisible(true);
+           // delete.setVisible(true);
             dispose();
         }
     }
