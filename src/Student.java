@@ -248,7 +248,7 @@ public class Student {
             }
         }
 
-        public void deleteStudent(int id)
+        public boolean deleteStudent(int id)
         {
             String query = "delete from student where S_ID = ?";
             try {
@@ -258,14 +258,16 @@ public class Student {
                 int rowsAffected = ps.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    System.out.println("Student deleted successfully.");
-                } else {
-                    System.out.println("No rows were affected. Student not found or not deleted.");
+                    return true;
+                }
+                else {
+                    return false;
                 }
             }
             catch (Exception e) {
                 System.out.println("com.Models.Student.deleteStudent(): " + e.getMessage());
             }
+            return true;
         }
 }
 
