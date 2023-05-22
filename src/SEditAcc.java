@@ -14,6 +14,8 @@ public class SEditAcc extends JFrame implements ActionListener {
     private JTextField Password;
     private JButton saveButton;
     private JButton cancelButton;
+    private JButton returnButton ;
+
 
     SEditAcc(){
         setTitle("Edit Student Account");
@@ -43,6 +45,8 @@ public class SEditAcc extends JFrame implements ActionListener {
 
         saveButton = new JButton("Save");
         cancelButton = new JButton("Cancel");
+        returnButton = new JButton("Return to Options Menu");
+
 
         idLabel.setBounds(50, 30, 100, 25);
         id.setBounds(160, 30, 200, 25);
@@ -63,11 +67,13 @@ public class SEditAcc extends JFrame implements ActionListener {
 
         saveButton.setBounds(100, 360, 100, 30);
         cancelButton.setBounds(220, 360, 100, 30);
+        returnButton.setBounds(220, 360, 100, 30);
 
 
         Color babyBlueColor = new Color(137, 207, 240);
         saveButton.setBackground(babyBlueColor);
         cancelButton.setBackground(babyBlueColor);
+        returnButton.setBackground(babyBlueColor);
 
         // Add labels, fields, and buttons to the frame
         add(idLabel);
@@ -89,10 +95,12 @@ public class SEditAcc extends JFrame implements ActionListener {
 
         add(saveButton);
         add(cancelButton);
+        add(returnButton);
 
         // Add action listeners to the buttons
         saveButton.addActionListener(this);
         cancelButton.addActionListener(this);
+        returnButton.addActionListener(this);
 
         // Set layout and visibility
         setLayout(null);
@@ -126,7 +134,10 @@ public class SEditAcc extends JFrame implements ActionListener {
             soption.setVisible(true);
             // Close the AdminEditAcc form without saving changes
             dispose();
+        } else if (e.getSource() == returnButton) {
+            Soption OptionPage = new Soption();
+            OptionPage.setVisible(true);
+            dispose();
         }
-
     }
 }

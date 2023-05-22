@@ -11,6 +11,8 @@ public class browsingBooks extends JFrame {
     private JComboBox<String> searchCriteriaComboBox;
     private JTextField searchTextField;
     private JButton searchButton;
+    private JButton returnButton ;
+
 
     public browsingBooks() {
         setTitle("Search for a book");
@@ -18,20 +20,20 @@ public class browsingBooks extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        searchButton.setBackground(babyBlueColor);
-
-
         // Create a panel for search components
         JPanel searchPanel = new JPanel();
         searchCriteriaComboBox = new JComboBox<>(new String[]{"ISBN", "Title", "Category", "Author", "Publishing Year"});
         searchTextField = new JTextField(20);
         searchButton = new JButton("Search");
+        returnButton = new JButton("Return to Options Menu");
+
 
         // Add components to the search panel
         searchPanel.add(searchCriteriaComboBox);
         searchPanel.add(searchTextField);
         searchPanel.add(searchButton);
+        searchPanel.add(returnButton);
+
 
         // Create a DefaultTableModel to store the table data
         DefaultTableModel tableModel = new DefaultTableModel();
@@ -60,6 +62,9 @@ public class browsingBooks extends JFrame {
         // Add the scroll pane to the content pane
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
+        Color babyBlueColor = new Color(137, 207, 240);
+        searchButton.setBackground(babyBlueColor);
+        returnButton.setBackground(babyBlueColor);
 
         // Add ActionListener to the search button
         searchButton.addActionListener(new ActionListener() {
@@ -109,6 +114,17 @@ public class browsingBooks extends JFrame {
                 }
             }
         });
+        returnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Handle the action when returnButton is clicked
+                Soption OptionPage = new Soption();
+                OptionPage.setVisible(true);
+                dispose();
+            }
+        });
+
+
         Display display = new Display();
         ArrayList<Book> searchResult = new ArrayList<>();
         try {
@@ -123,5 +139,8 @@ public class browsingBooks extends JFrame {
         }
 
         setVisible(true);
+    }
+        public static void main(String[] args) {
+       new browsingBooks();
     }
 }

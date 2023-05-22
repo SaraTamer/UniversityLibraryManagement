@@ -25,6 +25,8 @@ public class AAddBook extends JFrame {
     private JLabel publishingYearLabel = new JLabel("<html>Publishing<br>Year:</html>");
     private JTextField publishingYearTextField = new JTextField();
     private JButton addBookButton = new JButton("Add Book");
+    private JButton returnButton = new JButton("Return to Options Menu");
+
     private JPanel bookTitle;
 
     public AAddBook() {
@@ -123,6 +125,17 @@ public class AAddBook extends JFrame {
         gbc.gridwidth = 3;
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(addBookButton, gbc);
+        // Add returnButton
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        gbc.gridwidth = 3;
+        gbc.anchor = GridBagConstraints.CENTER;
+        contentPanel.add(returnButton, gbc);
+
+        Color babyBlueColor = new Color(137, 207, 240);
+        addBookButton.setBackground(babyBlueColor);
+        returnButton.setBackground(babyBlueColor);
+
 
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -132,6 +145,16 @@ public class AAddBook extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 Book();
+            }
+        });
+
+        returnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Handle the action when returnButton is clicked
+                Aoption OptionPage = new Aoption();
+                OptionPage.setVisible(true);
+                dispose();
             }
         });
     }
@@ -151,10 +174,8 @@ public class AAddBook extends JFrame {
         OptionPage.setVisible(true);
         dispose();
     }
-/*
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         SwingUtilities.invokeLater(AAddBook::new);
-    }
-*/
+    }*/
 }
 

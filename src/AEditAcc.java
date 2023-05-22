@@ -15,8 +15,7 @@ public class AEditAcc extends JFrame implements ActionListener {
     private JTextField Password;
     private JButton saveButton;
     private JButton cancelButton;
-
-   // private Admin admin;
+    private JButton returnButton ;
 
     AEditAcc() {
        // this.admin = admin;
@@ -48,6 +47,8 @@ public class AEditAcc extends JFrame implements ActionListener {
 
         saveButton = new JButton("Save");
         cancelButton = new JButton("Cancel");
+        returnButton = new JButton("Return to Options Menu");
+
 
         idLabel.setBounds(50, 30, 100, 25);
         id.setBounds(160, 30, 200, 25);
@@ -67,11 +68,14 @@ public class AEditAcc extends JFrame implements ActionListener {
         Password.setBounds(160, 310, 200, 25);
         saveButton.setBounds(100, 360, 100, 30);
         cancelButton.setBounds(220, 360, 100, 30);
+        returnButton.setBounds(50, 400, 200, 25);
+
 
 
         Color babyBlueColor = new Color(137, 207, 240);
         saveButton.setBackground(babyBlueColor);
         cancelButton.setBackground(babyBlueColor);
+        returnButton.setBackground(babyBlueColor);
 
         // Add labels, fields, and buttons to the frame
         add(idLabel);
@@ -93,11 +97,12 @@ public class AEditAcc extends JFrame implements ActionListener {
 
         add(saveButton);
         add(cancelButton);
+        add(returnButton);
 
         // Add action listeners to the buttons
         saveButton.addActionListener(this);
         cancelButton.addActionListener(this);
-
+        returnButton.addActionListener(this);
         // Set layout and visibility
         setLayout(null);
         setVisible(true);
@@ -131,8 +136,12 @@ public class AEditAcc extends JFrame implements ActionListener {
                 aoption.setVisible(true);
                 // Close the AdminEditAcc form without saving changes
                 dispose();
+            } else if (e.getSource() == returnButton) {
+                Aoption OptionPage = new Aoption();
+                OptionPage.setVisible(true);
+                dispose();
             }
 
-        }
     }
+}
 
