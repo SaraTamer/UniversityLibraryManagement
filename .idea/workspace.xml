@@ -25,8 +25,7 @@
     <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Sign up and log in gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sdelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sdelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Soption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soption.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +177,7 @@
       <workItem from="1684760657704" duration="1230000" />
       <workItem from="1684759933583" duration="1760000" />
       <workItem from="1684765377109" duration="419000" />
+      <workItem from="1684765919233" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="In the name of God.">
       <created>1684329854395</created>
