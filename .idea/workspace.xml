@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Search page GUI">
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Browsing books GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SViewBook.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SViewBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsearchBook.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/browsingBooks.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SsearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/browsingBooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684705713573</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Browsing books GUI">
+      <created>1684707250268</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684707250268</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -165,7 +167,8 @@
     <MESSAGE value="insert added" />
     <MESSAGE value="Home Pages GUI" />
     <MESSAGE value="Search page GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search page GUI" />
+    <MESSAGE value="Browsing books GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Browsing books GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
