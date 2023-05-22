@@ -14,13 +14,12 @@ public class Homepage extends JFrame {
         setLocationRelativeTo(null);
 
         JLabel welcomeLabel = new JLabel("Welcome! \n Are you Admin or Student?");
-        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        welcomeLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
 
         adminButton = new JButton("Admin");
         studentButton = new JButton("Student");
-
-        adminButton.setFont(new Font("Arial", Font.PLAIN, 20));
-        studentButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        adminButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        studentButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 
         adminButton.setPreferredSize(new Dimension(150, 50));
         studentButton.setPreferredSize(new Dimension(150, 50));
