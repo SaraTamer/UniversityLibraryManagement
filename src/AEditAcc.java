@@ -23,6 +23,8 @@ public class AEditAcc extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
+        getContentPane().setBackground(new Color(238,210,186,255));
+
         JLabel idLabel = new JLabel("ID:");
         JLabel firstNameLabel = new JLabel("First Name:");
         JLabel lastNameLabel = new JLabel("LastName:");
@@ -70,12 +72,18 @@ public class AEditAcc extends JFrame implements ActionListener {
         cancelButton.setBounds(220, 360, 100, 30);
         returnButton.setBounds(50, 400, 200, 25);
 
+        Color btncolor = new Color(173, 147, 124);
+        saveButton.setBackground(btncolor);
+        cancelButton.setBackground(btncolor);
+        returnButton.setBackground(btncolor);
 
+        saveButton.setBorderPainted(false);
+        saveButton.setFocusPainted(false);
+        cancelButton.setBorderPainted(false);
+        cancelButton.setFocusPainted(false);
+        returnButton.setBorderPainted(false);
+        returnButton.setFocusPainted(false);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        saveButton.setBackground(babyBlueColor);
-        cancelButton.setBackground(babyBlueColor);
-        returnButton.setBackground(babyBlueColor);
 
         // Add labels, fields, and buttons to the frame
         add(idLabel);
@@ -103,6 +111,12 @@ public class AEditAcc extends JFrame implements ActionListener {
         saveButton.addActionListener(this);
         cancelButton.addActionListener(this);
         returnButton.addActionListener(this);
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
+
+
         // Set layout and visibility
         setLayout(null);
         setVisible(true);

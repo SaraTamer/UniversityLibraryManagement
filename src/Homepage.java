@@ -13,8 +13,15 @@ public class Homepage extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
+        // Background Image
+        ImageIcon backgroundImage = new ImageIcon("photo.jpg");
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, 800, 600);
+        getContentPane().add(backgroundLabel);
+
         JLabel welcomeLabel = new JLabel("Welcome! \n Are you Admin or Student?");
         welcomeLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
+        welcomeLabel.setForeground(new Color(94,70,58,255));
 
         adminButton = new JButton("Admin");
         studentButton = new JButton("Student");
@@ -24,39 +31,43 @@ public class Homepage extends JFrame {
         adminButton.setPreferredSize(new Dimension(150, 50));
         studentButton.setPreferredSize(new Dimension(150, 50));
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        adminButton.setBackground(babyBlueColor);
-        studentButton.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        adminButton.setBackground(btncolor);
+        studentButton.setBackground(btncolor);
+        adminButton.setBorderPainted(false);
+        adminButton.setFocusPainted(false);
+        studentButton.setBorderPainted(false);
+        studentButton.setFocusPainted(false);
 
-        adminButton.addActionListener(new ActionListener()
-        {
+        adminButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 Ahomepage adminHomePage = new Ahomepage();
                 adminHomePage.setVisible(true);
                 dispose();
             }
         });
 
-        studentButton.addActionListener(new ActionListener()
-        {
+        studentButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 Shomepage studentHomePage = new Shomepage();
                 studentHomePage.setVisible(true);
                 dispose();
             }
         });
 
-        getContentPane().setLayout(new BorderLayout());
+        getContentPane().setLayout(null); // Use null layout for absolute positioning
 
         JPanel welcomePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        welcomePanel.setOpaque(false); // Make the panel transparent
+        welcomePanel.setBounds(0, 200, 800, 100); // Set the position and size of the panel
         welcomePanel.add(welcomeLabel);
-        getContentPane().add(welcomePanel, BorderLayout.NORTH);
+        backgroundLabel.add(welcomePanel);
 
         JPanel buttonPanel = new JPanel(new GridBagLayout());
+        buttonPanel.setOpaque(false); // Make the panel transparent
+        buttonPanel.setBounds(0, 300, 800, 100); // Set the position and size of the panel
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 0, 10, 0); // Add some vertical spacing
         gbc.gridx = 0;
@@ -65,9 +76,12 @@ public class Homepage extends JFrame {
 
         gbc.gridy = 1;
         buttonPanel.add(studentButton, gbc);
+        backgroundLabel.add(buttonPanel);
 
-        getContentPane().add(buttonPanel, BorderLayout.CENTER);
-
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
+        
         setVisible(true);
     }
 

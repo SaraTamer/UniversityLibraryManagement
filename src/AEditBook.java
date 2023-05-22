@@ -60,8 +60,8 @@ public class AEditBook extends JFrame {
         gbc.gridwidth = 3;
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(returnButton, gbc);
-        Color babyBlueColor = new Color(137, 207, 240);
-        returnButton.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        returnButton.setBackground(btncolor);
 
         // Add bookTitleLabel
         gbc.gridx = 0;
@@ -130,10 +130,22 @@ public class AEditBook extends JFrame {
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
 
-        addBookButton.setBackground(babyBlueColor);
-        searchButton.setBackground(babyBlueColor);
+        addBookButton.setBackground(btncolor);
+        searchButton.setBackground(btncolor);
+
+        addBookButton.setBorderPainted(false);
+        addBookButton.setFocusPainted(false);
+        searchButton.setBorderPainted(false);
+        searchButton.setFocusPainted(false);
+
+        getContentPane().setBackground(new Color(238,210,186,255));
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
+
         addBookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){

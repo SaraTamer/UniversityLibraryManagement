@@ -15,6 +15,8 @@ public class Aoption extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 300);
 
+        getContentPane().setBackground(new Color(238,210,186,255));
+
         JLabel titleLabel = new JLabel("Admin Functionalities:");
         titleLabel.setBounds(50, 10, 200, 20);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -36,14 +38,24 @@ public class Aoption extends JFrame implements ActionListener {
 
 
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        addBookButton.setBackground(babyBlueColor);
-        editAccountButton.setBackground(babyBlueColor);
-        editBookButton.setBackground(babyBlueColor);
-        statisticsButton.setBackground(babyBlueColor);
-        deleteStudentButton.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        addBookButton.setBackground(btncolor);
+        editAccountButton.setBackground(btncolor);
+        editBookButton.setBackground(btncolor);
+        statisticsButton.setBackground(btncolor);
+        deleteStudentButton.setBackground(btncolor);
 
-
+        addBookButton.setBorderPainted(false);
+        addBookButton.setFocusPainted(false);
+        editAccountButton.setBorderPainted(false);
+        editAccountButton.setFocusPainted(false);
+        editBookButton.setBorderPainted(false);
+        editBookButton.setFocusPainted(false);
+        statisticsButton.setBorderPainted(false);
+        statisticsButton.setFocusPainted(false);
+        deleteStudentButton.setBorderPainted(false);
+        deleteStudentButton.setFocusPainted(false);
+        
         // Add buttons to the frame
         add(editAccountButton);
         add(addBookButton);
@@ -57,6 +69,10 @@ public class Aoption extends JFrame implements ActionListener {
         statisticsButton.addActionListener(this);
         deleteStudentButton.addActionListener(this);
 
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
         setLayout(null);
         setVisible(true);
 

@@ -23,10 +23,13 @@ public class browsingBooks extends JFrame {
         // Create a panel for search components
         JPanel searchPanel = new JPanel();
         searchCriteriaComboBox = new JComboBox<>(new String[]{"ISBN", "Title", "Category", "Author", "Publishing Year"});
+        searchCriteriaComboBox.setBackground(Color.white);
+        searchCriteriaComboBox.setForeground(new Color(238,210,186,255));
+
         searchTextField = new JTextField(20);
         searchButton = new JButton("Search");
         returnButton = new JButton("Return to Options Menu");
-
+        searchPanel.setBackground(new Color(238,210,186,255));
 
         // Add components to the search panel
         searchPanel.add(searchCriteriaComboBox);
@@ -49,7 +52,7 @@ public class browsingBooks extends JFrame {
 
         // Create the JTable with the populated table model
         table = new JTable(tableModel);
-
+        table.setBackground(new Color(238,210,186,255));
         // Set the layout manager for the content pane
         getContentPane().setLayout(new BorderLayout());
 
@@ -58,13 +61,20 @@ public class browsingBooks extends JFrame {
 
         // Add the table to a JScrollPane
         JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setBackground(new Color(238,210,186,255));
 
         // Add the scroll pane to the content pane
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        searchButton.setBackground(babyBlueColor);
-        returnButton.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        searchButton.setBackground(btncolor);
+        returnButton.setBackground(btncolor);
+
+        searchButton.setBorderPainted(false);
+        searchButton.setFocusPainted(false);
+        returnButton.setBorderPainted(false);
+        returnButton.setFocusPainted(false);
+
 
         // Add ActionListener to the search button
         searchButton.addActionListener(new ActionListener() {
@@ -137,6 +147,10 @@ public class browsingBooks extends JFrame {
                     book.getLanguage(), book.getEdition(), book.getPublishingYear(), book.getAuthor()};
             tableModel.addRow(rowData);
         }
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
     }

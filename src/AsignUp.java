@@ -36,7 +36,7 @@ public class AsignUp extends JFrame {
     public AsignUp() {
         setTitle("Sign Up");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(900, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         // Create a panel with GridBagLayout
@@ -44,6 +44,8 @@ public class AsignUp extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10); // Set the spacing between components
+
+        panel.setBackground(new Color (238,210,186,255));
 
         // Set the preferred sizes and fonts for the labels and text fields
         Dimension labelSize = new Dimension(150, 50);
@@ -190,11 +192,18 @@ public class AsignUp extends JFrame {
         gbc.gridwidth = 2;
         panel.add(submit, gbc);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        submit.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        submit.setBackground(btncolor);
+        submit.setBorderPainted(false);
+        submit.setFocusPainted(false);
+
         // Use a BorderLayout for the main content pane
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.NORTH);
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
         submit.addActionListener(new ActionListener() {
@@ -236,6 +245,9 @@ public class AsignUp extends JFrame {
         }
 
 
+    public static void main(String[] args) {
+        new AsignUp();
+    }
 
 
 }

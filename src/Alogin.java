@@ -18,6 +18,8 @@ public class Alogin extends JFrame {
         setSize(900, 800);
         setLocationRelativeTo(null);
 
+        getContentPane().setBackground(new Color(238,210,186,255));
+
         // Create a panel with GridBagLayout
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -59,12 +61,20 @@ public class Alogin extends JFrame {
         gbc.gridwidth = 2;
         panel.add(submit, gbc);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        submit.setBackground(babyBlueColor);
+
+        Color btncolor = new Color(173, 147, 124);
+        submit.setBackground(btncolor);
+        submit.setBorderPainted(false);
+        submit.setFocusPainted(false);
+
 
         // Use a BorderLayout for the main content pane
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.CENTER);
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
         submit.addActionListener(new ActionListener() {

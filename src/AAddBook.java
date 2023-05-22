@@ -155,13 +155,22 @@ public class AAddBook extends JFrame {
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(returnButton, gbc);
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        addBookButton.setBackground(babyBlueColor);
-        returnButton.setBackground(babyBlueColor);
-
+        Color btncolor = new Color(173, 147, 124);
+        addBookButton.setBackground(btncolor);
+        returnButton.setBackground(btncolor);
+        addBookButton.setBorderPainted(false);
+        addBookButton.setFocusPainted(false);
+        returnButton.setBorderPainted(false);
+        returnButton.setFocusPainted(false);
 
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
+
+        //getContentPane().setBackground(new Color(238,210,186,255));
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
         addBookButton.addActionListener(new ActionListener() {

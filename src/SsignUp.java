@@ -39,12 +39,15 @@ public class SsignUp extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
+        getContentPane().setBackground(new Color(238,210,186,255));
+
         // Create a panel with GridBagLayout
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10); // Set the spacing between components
 
+        panel.setBackground(new Color(238,210,186,255));
         // Set the preferred sizes and fonts for the labels and text fields
         Dimension labelSize = new Dimension(150, 50);
         Dimension textFieldSize = new Dimension(400, 30);
@@ -88,9 +91,10 @@ public class SsignUp extends JFrame {
 
         submit.setPreferredSize(new Dimension(100, 30));
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        submit.setBackground(babyBlueColor);
-
+        Color btncolor = new Color(173, 147, 124);
+        submit.setBackground(btncolor);
+        submit.setBorderPainted(false);
+        submit.setFocusPainted(false);
 
         // Add components to the panel
         gbc.gridx = 0;
@@ -167,6 +171,10 @@ public class SsignUp extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(panel, BorderLayout.NORTH);
 
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
+
         setVisible(true);
         submit.addActionListener(new ActionListener() {
             @Override
@@ -201,4 +209,9 @@ public class SsignUp extends JFrame {
         OptionPage.setVisible(true);
         dispose();
     }
+
+    public static void main(String[] args) {
+        new SsignUp();
+    }
+
 }

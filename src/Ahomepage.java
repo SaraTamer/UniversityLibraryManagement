@@ -23,9 +23,13 @@ public class Ahomepage extends JFrame {
         signupButton.setPreferredSize(new Dimension(200, 60));
         logInButton.setPreferredSize(new Dimension(200, 60));
 
-        Color babyBlueColor = new Color(137, 207, 240);
-        signupButton.setBackground(babyBlueColor);
-        logInButton.setBackground(babyBlueColor);
+        Color btncolor = new Color(173, 147, 124);
+        signupButton.setBackground(btncolor);
+        logInButton.setBackground(btncolor);
+        signupButton.setBorderPainted(false);
+        signupButton.setFocusPainted(false);
+        logInButton.setBorderPainted(false);
+        logInButton.setFocusPainted(false);
 
         signupButton.addActionListener(new ActionListener() {
             @Override
@@ -68,6 +72,11 @@ public class Ahomepage extends JFrame {
         JPanel logInPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         logInPanel.add(logInButton);
         getContentPane().add(logInPanel, gbc);
+        logInPanel.setBackground(new Color (238,210,186,255));
+
+        // Set icon for the JFrame
+        ImageIcon icon = new ImageIcon("logo.png");
+        setIconImage(icon.getImage());
 
         setVisible(true);
     }
