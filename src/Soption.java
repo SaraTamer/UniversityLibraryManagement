@@ -87,4 +87,5 @@ public class Soption extends JFrame implements ActionListener {
     public static void main(String[] args) {
         Soption runProgram = new Soption();
     }
+
 }

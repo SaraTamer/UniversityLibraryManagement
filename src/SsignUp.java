@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import java.util.Scanner;
 
 public class SsignUp extends JFrame {
     private JLabel fnameText = new JLabel("First Name");
@@ -22,16 +21,17 @@ public class SsignUp extends JFrame {
 
     private JLabel PHText = new JLabel( "Phone");
     private JFormattedTextField PHTextField = new JFormattedTextField();
+
     private JLabel genderText = new JLabel( "Gender");
     private JFormattedTextField genderTextField = new JFormattedTextField();
+
     private JLabel depText = new JLabel( "Department");
     private JFormattedTextField depTextField = new JFormattedTextField();
+
     private JLabel passText = new JLabel( "Password");
     private JFormattedTextField passTextField = new JFormattedTextField();
 
     private JButton submit = new JButton("Sign Up");
-
-
 
     public SsignUp() {
         setTitle("Sign Up");
@@ -39,7 +39,7 @@ public class SsignUp extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(new Color(238,210,186,255));
+        getContentPane().setBackground(new Color(238, 210, 186, 255));
 
         // Create a panel with GridBagLayout
         JPanel panel = new JPanel(new GridBagLayout());
@@ -47,11 +47,11 @@ public class SsignUp extends JFrame {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10); // Set the spacing between components
 
-        panel.setBackground(new Color(238,210,186,255));
+        panel.setBackground(new Color(238, 210, 186, 255));
         // Set the preferred sizes and fonts for the labels and text fields
-        Dimension labelSize = new Dimension(150, 50);
-        Dimension textFieldSize = new Dimension(400, 30);
-        Font labelFont = new Font("Arial", Font.BOLD, 20);
+        Dimension labelSize = new Dimension(100, 30);
+        Dimension textFieldSize = new Dimension(200, 30);
+        Font labelFont = new Font("Arial", Font.BOLD, 14);
 
         fnameText.setPreferredSize(labelSize);
         fnameText.setFont(labelFont);
@@ -176,6 +176,7 @@ public class SsignUp extends JFrame {
         setIconImage(icon.getImage());
 
         setVisible(true);
+
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -183,7 +184,8 @@ public class SsignUp extends JFrame {
             }
         });
     }
-    private void registerButtonClicked(){
+
+    private void registerButtonClicked() {
         int id = Integer.parseInt(IDTextField.getText());
         String firstName = fnameTextField.getText();
         String lastName = lnameTextField.getText();
@@ -194,6 +196,7 @@ public class SsignUp extends JFrame {
         String department = depTextField.getText();
         String password = passTextField.getText();
         RegistrationSystem obj = new RegistrationSystem();
+
         if (!obj.isValidPassword(password)) {
             JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
                     "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -204,6 +207,7 @@ public class SsignUp extends JFrame {
             JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+
         obj.studentSignUp(id, firstName, lastName, city, street, phoneNum, gender, department, password);
         Slogin OptionPage = new Slogin();
         OptionPage.setVisible(true);
@@ -213,5 +217,4 @@ public class SsignUp extends JFrame {
     public static void main(String[] args) {
         new SsignUp();
     }
-
 }
