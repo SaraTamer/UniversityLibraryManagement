@@ -214,7 +214,4 @@ public class SsignUp extends JFrame {
         dispose();
     }
 
-    public static void main(String[] args) {
-        new SsignUp();
-    }
 }

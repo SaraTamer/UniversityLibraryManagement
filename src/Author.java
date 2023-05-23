@@ -11,7 +11,6 @@ public class Author {
         this.nationality = nationality;
         this.ISBN = ISBN;
 
-
     }
     public void addAuthor()
     {

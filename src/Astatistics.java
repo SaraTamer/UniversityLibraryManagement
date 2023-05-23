@@ -116,8 +116,4 @@ public class Astatistics extends JFrame {
         });
     }
 
-    public static void main(String[] args) {
-        Astatistics statistics = new Astatistics();
-        statistics.setVisible(true);
-    }
 }

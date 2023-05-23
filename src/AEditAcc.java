@@ -20,7 +20,6 @@ public class AEditAcc extends JFrame implements ActionListener {
     private JButton returnButton ;
 
     AEditAcc() {
-       // this.admin = admin;
         setTitle("Edit Admin Account");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
@@ -124,52 +123,49 @@ public class AEditAcc extends JFrame implements ActionListener {
     }
 
     public void actionPerformed (ActionEvent e){
-            if (e.getSource() == saveButton) {
-                String newFirstName = firstName.getText();
-                String newLastName = lastName.getText();
-                String newCity = City.getText();
-                String newStreet = Street.getText();
-                String newPhone = phoneNum.getText();
-                String newRole = Role.getText();
-                String newPassword = Password.getText();
+        if (e.getSource() == saveButton) {
+            String newFirstName = firstName.getText();
+            String newLastName = lastName.getText();
+            String newCity = City.getText();
+            String newStreet = Street.getText();
+            String newPhone = phoneNum.getText();
+            String newRole = Role.getText();
+            String newPassword = Password.getText();
 
-                loginSystem.admin.editfName(loginSystem.admin.getID(), newFirstName);
-                loginSystem.admin.editlName(loginSystem.admin.getID(), newLastName);
-                loginSystem.admin.editCity(loginSystem.admin.getID(), newCity);
-                loginSystem.admin.editStreet(loginSystem.admin.getID(), newStreet);
-                if (!RegistrationSystem.isValidPhoneNumber(newPhone)) {
-                    JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015."
-                            , "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                loginSystem.admin.editPhone(loginSystem.admin.getID(), newPhone);
-                loginSystem.admin.editRole(loginSystem.admin.getID(), newRole);
-                if (!RegistrationSystem.isValidPassword(newPassword)) {
-                    JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
-                            "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                loginSystem.admin.editPass(loginSystem.admin.getID(), newPassword);
-
-                // Display a message dialog to inform the user about the successful update
-                JOptionPane.showMessageDialog(this, "Account information updated successfully!");
-
+            loginSystem.admin.editfName(loginSystem.admin.getID(), newFirstName);
+            loginSystem.admin.editlName(loginSystem.admin.getID(), newLastName);
+            loginSystem.admin.editCity(loginSystem.admin.getID(), newCity);
+            loginSystem.admin.editStreet(loginSystem.admin.getID(), newStreet);
+            if (!RegistrationSystem.isValidPhoneNumber(newPhone)) {
+                JOptionPane.showMessageDialog(this, "Invalid phone number. Phone number must be 11 digits long and start with 012, 011, or 015."
+                        , "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
-            else if (e.getSource() == cancelButton) {
-                Aoption aoption = new Aoption();
-                aoption.setVisible(true);
-                // Close the AdminEditAcc form without saving changes
-                dispose();
-            } else if (e.getSource() == returnButton) {
-                Aoption OptionPage = new Aoption();
-                OptionPage.setVisible(true);
-                dispose();
+            loginSystem.admin.editPhone(loginSystem.admin.getID(), newPhone);
+            loginSystem.admin.editRole(loginSystem.admin.getID(), newRole);
+            if (!RegistrationSystem.isValidPassword(newPassword)) {
+                JOptionPane.showMessageDialog(this, "Invalid password. Password must be at least 8 characters long and " +
+                        "contain at least one digit and one special character.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+            loginSystem.admin.editPass(loginSystem.admin.getID(), newPassword);
+
+            // Display a message dialog to inform the user about the successful update
+            JOptionPane.showMessageDialog(this, "Account information updated successfully!");
+
         }
-    public static void main(String[] args) throws SQLException {
-        AEditAcc b = new AEditAcc();
+        else if (e.getSource() == cancelButton) {
+            Aoption aoption = new Aoption();
+            aoption.setVisible(true);
+            // Close the AdminEditAcc form without saving changes
+            dispose();
+        } else if (e.getSource() == returnButton) {
+            Aoption OptionPage = new Aoption();
+            OptionPage.setVisible(true);
+            dispose();
+        }
     }
-    }
+}
 
 
 

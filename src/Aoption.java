@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class Aoption extends JFrame implements ActionListener {
     private JButton editAccountButton;
@@ -115,8 +114,5 @@ public class Aoption extends JFrame implements ActionListener {
             browsePage.setVisible(true);
             dispose();
         }
-    }
-    public static void main(String[] args) {
-        new Aoption();
     }
 }

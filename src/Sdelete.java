@@ -80,7 +80,4 @@ public class Sdelete extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        new Sdelete();
-    }
 }

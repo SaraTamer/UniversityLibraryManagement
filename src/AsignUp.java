@@ -245,9 +245,6 @@ public class AsignUp extends JFrame {
         }
 
 
-    public static void main(String[] args) {
-        new AsignUp();
-    }
 
 
 }
