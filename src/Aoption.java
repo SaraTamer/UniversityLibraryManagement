@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Aoption extends JFrame implements ActionListener {
     private JButton editAccountButton;
@@ -55,13 +56,14 @@ public class Aoption extends JFrame implements ActionListener {
         statisticsButton.setFocusPainted(false);
         deleteStudentButton.setBorderPainted(false);
         deleteStudentButton.setFocusPainted(false);
-        
+
         // Add buttons to the frame
         add(editAccountButton);
         add(addBookButton);
         add(editBookButton);
         add(statisticsButton);
         add(deleteStudentButton);
+
         // Add action listeners to the buttons
         editAccountButton.addActionListener(this);
         addBookButton.addActionListener(this);
@@ -69,13 +71,12 @@ public class Aoption extends JFrame implements ActionListener {
         statisticsButton.addActionListener(this);
         deleteStudentButton.addActionListener(this);
 
-
         // Set icon for the JFrame
         ImageIcon icon = new ImageIcon("logo.png");
         setIconImage(icon.getImage());
+
         setLayout(null);
         setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent e) {

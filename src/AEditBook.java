@@ -24,6 +24,7 @@ public class AEditBook extends JFrame {
     private JTextField publishingYearTextField = new JTextField();
     private JButton addBookButton = new JButton("Edit Book");
     private JButton returnButton = new JButton("Return to Options Menu");
+    private JButton Delete = new JButton("Delete");
 
 
     public AEditBook() {
@@ -49,7 +50,6 @@ public class AEditBook extends JFrame {
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         searchISBNTextField.setPreferredSize(new Dimension(200, 24));
-
         contentPanel.add(searchISBNTextField, gbc);
 
         // Add searchButton
@@ -126,6 +126,17 @@ public class AEditBook extends JFrame {
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(addBookButton, gbc);
 
+        gbc.gridx = 0;
+        gbc.gridy = 10;
+        gbc.gridwidth = 3;
+        gbc.anchor = GridBagConstraints.CENTER;
+        contentPanel.add(Delete, gbc);
+        Color btn2color = new Color(173, 147, 124);
+        Delete.setBackground(btn2color);
+        Delete.setBorderPainted(false);
+        Delete.setFocusPainted(false);
+
+
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
@@ -171,6 +182,13 @@ public class AEditBook extends JFrame {
                 dispose();
             }
         });
+        Delete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Handle the action when returnButton is clicked
+                DeleteBook();
+            }
+        });
     }
     public void Book() {
         Book book = new Book();
@@ -212,8 +230,10 @@ public class AEditBook extends JFrame {
         }
 
     }
+    public void DeleteBook(){
+        Book book = new Book();
+        String ISBN = searchISBNTextField.getText();
+        book.deleteBook(Integer.parseInt(ISBN));
+    }
 
-/*    public static void main(String[] args) {
-        SwingUtilities.invokeLater(AEditBook::new);
-    }*/
 }

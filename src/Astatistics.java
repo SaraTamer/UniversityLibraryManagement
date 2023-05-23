@@ -72,9 +72,10 @@ public class Astatistics extends JFrame {
         );
         statisticsTable.setModel(statisticsTableModel);
 
-        statisticsTable.setModel(statisticsTableModel);
+        statisticsTable.setEnabled(false); // Disable statisticsTable
         JTableHeader header = statisticsTable.getTableHeader();
         header.setBackground(new Color(154,118,82,255)); // Set the desired background color
+
         // Create the student table model
         DefaultTableModel studentTableModel = new DefaultTableModel(
                 new Object[]{"Department", "Number of Students"},
@@ -87,7 +88,7 @@ public class Astatistics extends JFrame {
         }
         studentTable.setModel(studentTableModel);
 
-        studentTable.setModel(studentTableModel);
+        studentTable.setEnabled(false); // Disable studentTable
         JTableHeader header2 = studentTable.getTableHeader();
         header2.setBackground(new Color(154,118,82,255)); // Set the desired background color
 
@@ -103,7 +104,7 @@ public class Astatistics extends JFrame {
         }
         publishingTable.setModel(publishingTableModel);
 
-        publishingTable.setModel(publishingTableModel);
+        publishingTable.setEnabled(false); // Disable publishingTable
         JTableHeader header3 = publishingTable.getTableHeader();
         header3.setBackground(new Color(154,118,82,255)); // Set the desired background color
 

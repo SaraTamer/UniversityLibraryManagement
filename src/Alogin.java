@@ -104,9 +104,7 @@ public class Alogin extends JFrame {
 
 
 }
-    public static void main(String[] args) throws SQLException {
-        new Alogin();
-    }
+
 
 }
 
