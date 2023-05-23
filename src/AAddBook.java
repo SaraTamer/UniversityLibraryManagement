@@ -207,6 +207,7 @@ public class AAddBook extends JFrame {
         Author Au = new Author(authorName,authorNation,ISBN);
         book.addNewBook(ISBN, bookTitle, category, language, edition, publishingYear);
         Au.addAuthor();
+        JOptionPane.showMessageDialog(this, "Book added successfully!");
         Aoption OptionPage = new Aoption();
         OptionPage.setVisible(true);
         dispose();
