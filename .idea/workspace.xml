@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Statistics done">
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Statistics done"/>
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Astatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Astatistics.java" afterDir="false" />
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="Statistics done"/>
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6fb35f56-d166-4cac-aa74-47c122f4ed45" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_23_2023_1_35_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_23_2023_1_35_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AAddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AEditAcc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditAcc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AEditBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AEditBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aoption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aoption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sdelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sdelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/browsingBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/browsingBooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +83,7 @@
   }
 }</component>
   <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Sdelete">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -109,6 +123,8 @@
     </configuration>
     <configuration name="Aoption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Aoption" />
+    <configuration name="AAddBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AAddBook" />
       <module name="UniversityLibraryManagement" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,6 +132,13 @@
     </configuration>
     <configuration name="Astatistics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Astatistics" />
+      <module name="UniversityLibraryManagement" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Homepage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homepage" />
       <module name="UniversityLibraryManagement" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,6 +153,8 @@
     </configuration>
     <configuration name="browsingBooks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="browsingBooks" />
+    <configuration name="Sdelete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Sdelete" />
       <module name="UniversityLibraryManagement" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,6 +167,11 @@
         <item itemvalue="Application.Astatistics" />
         <item itemvalue="Application.Aoption" />
         <item itemvalue="Application.AEditAcc" />
+        <item itemvalue="Application.Sdelete" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Astatistics" />
+        <item itemvalue="Application.Homepage" />
+        <item itemvalue="Application.AAddBook" />
       </list>
     </recent_temporary>
   </component>
@@ -212,6 +242,17 @@
         <option value="Default.Subject" />
         <option value="Space.CommitStatus" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
