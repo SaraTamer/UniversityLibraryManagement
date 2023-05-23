@@ -55,6 +55,7 @@ public class browsingBooks extends JFrame {
         table.setBackground(new Color(238,210,186,255));
         // Set the layout manager for the content pane
         getContentPane().setLayout(new BorderLayout());
+        table.setEnabled(false);
 
         // Add the search panel to the content pane
         getContentPane().add(searchPanel, BorderLayout.NORTH);
@@ -74,7 +75,6 @@ public class browsingBooks extends JFrame {
         searchButton.setFocusPainted(false);
         returnButton.setBorderPainted(false);
         returnButton.setFocusPainted(false);
-
 
         // Add ActionListener to the search button
         searchButton.addActionListener(new ActionListener() {
