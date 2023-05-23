@@ -5,5 +5,4 @@ public class Main {
         Homepage runProgram = new Homepage();
         runProgram.setVisible(true);
     }
-
 }

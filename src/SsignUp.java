@@ -29,7 +29,7 @@ public class SsignUp extends JFrame {
     private JFormattedTextField depTextField = new JFormattedTextField();
 
     private JLabel passText = new JLabel( "Password");
-    private JFormattedTextField passTextField = new JFormattedTextField();
+    private JPasswordField passTextField = new JPasswordField();
 
     private JButton submit = new JButton("Sign Up");
 

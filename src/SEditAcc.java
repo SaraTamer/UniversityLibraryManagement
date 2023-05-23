@@ -11,7 +11,7 @@ public class SEditAcc extends JFrame implements ActionListener {
     private JTextField phoneNum;
     private JTextField Department;
     private JTextField id ;
-    private JTextField Password;
+    private JPasswordField Password;
     private JButton saveButton;
     private JButton cancelButton;
     private JButton returnButton ;
@@ -43,7 +43,7 @@ public class SEditAcc extends JFrame implements ActionListener {
         Street = new JTextField(loginSystem.student.getStreet());
         phoneNum = new JTextField(loginSystem.student.getPhoneNum());
         Department = new JTextField(loginSystem.student.getDepartment());
-        Password = new JTextField(loginSystem.student.getPassword());
+        Password = new JPasswordField(loginSystem.student.getPassword());
 
 
         saveButton = new JButton("Save");

@@ -8,7 +8,7 @@ public class Alogin extends JFrame {
     private JLabel IDText = new JLabel("ID");
     private JFormattedTextField IDTextField = new JFormattedTextField();
     private JLabel PassText = new JLabel("Password");
-    private JFormattedTextField PassTextField = new JFormattedTextField();
+    private JPasswordField PassTextField = new JPasswordField();
 
     private JButton submit = new JButton("Log in");
 
@@ -104,7 +104,9 @@ public class Alogin extends JFrame {
 
 
 }
-
+/*    public static void main(String[] args) throws SQLException {
+        new Alogin();
+    }*/
 
 }
 

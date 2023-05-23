@@ -13,7 +13,8 @@ public class AEditAcc extends JFrame implements ActionListener {
     private JTextField phoneNum;
     private JTextField Role;
     private JTextField id ;
-    private JTextField Password;
+    private JPasswordField Password;
+
     private JButton saveButton;
     private JButton cancelButton;
     private JButton returnButton ;
@@ -44,8 +45,7 @@ public class AEditAcc extends JFrame implements ActionListener {
         Street = new JTextField(loginSystem.admin.getStreet());
         phoneNum = new JTextField(loginSystem.admin.getPhoneNum());
         Role = new JTextField(loginSystem.admin.getRole());
-        Password = new JTextField(loginSystem.admin.getPassword());
-
+        Password = new JPasswordField(loginSystem.admin.getPassword());
 
 
         saveButton = new JButton("Save");

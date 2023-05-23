@@ -8,7 +8,7 @@ public class Slogin extends JFrame {
     private JLabel IDText = new JLabel("ID");
     private JFormattedTextField IDTextField = new JFormattedTextField();
     private JLabel PassText = new JLabel("Password");
-    private JFormattedTextField PassTextField = new JFormattedTextField();
+    private JPasswordField PassTextField = new JPasswordField();
 
     private JButton submit = new JButton("Log in");
 
