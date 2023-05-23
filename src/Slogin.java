@@ -15,7 +15,7 @@ public class Slogin extends JFrame {
     public Slogin() {
         setTitle("Log in");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(900, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         getContentPane().setBackground(new Color(238,210,186,255));

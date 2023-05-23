@@ -154,9 +154,8 @@ public class AEditAcc extends JFrame implements ActionListener {
                 // Display a message dialog to inform the user about the successful update
                 JOptionPane.showMessageDialog(this, "Account information updated successfully!");
 
-                // Close the AdminEditAcc form
-                dispose();
-            } else if (e.getSource() == cancelButton) {
+            }
+            else if (e.getSource() == cancelButton) {
                 Aoption aoption = new Aoption();
                 aoption.setVisible(true);
                 // Close the AdminEditAcc form without saving changes

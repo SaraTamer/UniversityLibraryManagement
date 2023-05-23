@@ -55,13 +55,7 @@ public class AEditBook extends JFrame {
         // Add searchButton
         gbc.gridx = 2;
         contentPanel.add(searchButton, gbc);
-        gbc.gridx = 0;
-        gbc.gridy = 7;
-        gbc.gridwidth = 3;
-        gbc.anchor = GridBagConstraints.CENTER;
-        contentPanel.add(returnButton, gbc);
-        Color btncolor = new Color(173, 147, 124);
-        returnButton.setBackground(btncolor);
+
 
         // Add bookTitleLabel
         gbc.gridx = 0;
@@ -127,7 +121,7 @@ public class AEditBook extends JFrame {
         contentPanel.add(addBookButton, gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 10;
+        gbc.gridy = 7;
         gbc.gridwidth = 3;
         gbc.anchor = GridBagConstraints.CENTER;
         contentPanel.add(Delete, gbc);
@@ -136,7 +130,15 @@ public class AEditBook extends JFrame {
         Delete.setBorderPainted(false);
         Delete.setFocusPainted(false);
 
-
+        gbc.gridx = 0;
+        gbc.gridy = 10;
+        gbc.gridwidth = 3;
+        gbc.anchor = GridBagConstraints.CENTER;
+        Color btncolor = new Color(173, 147, 124);
+        returnButton.setBackground(btncolor);
+        returnButton.setBorderPainted(false);
+        returnButton.setFocusPainted(false);
+        contentPanel.add(returnButton, gbc);
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
@@ -203,6 +205,7 @@ public class AEditBook extends JFrame {
         book.updateBookEdition(Integer.parseInt(ISBN),language);
         book.updateBookLanguage(Integer.parseInt(ISBN),edition);
         book.updateBookPublisingYear(Integer.parseInt(ISBN),publishingYear);
+        JOptionPane.showMessageDialog(this, "Book updated successfully!");
         Aoption OptionPage = new Aoption();
         OptionPage.setVisible(true);
         dispose();
