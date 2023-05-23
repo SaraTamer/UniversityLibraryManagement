@@ -39,7 +39,7 @@ public class AEditBook extends JFrame {
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.NORTHWEST;
         gbc.insets = new Insets(10, 5, 10, 5);
-
+        contentPanel.setBackground(new Color(238,210,186,255));
         // Add searchLabel
         contentPanel.add(searchLabel, gbc);
 

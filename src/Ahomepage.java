@@ -14,6 +14,8 @@ public class Ahomepage extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
+        getContentPane().setBackground(new Color(238,210,186,255));
+
         signupButton = new JButton("Sign In");
         logInButton = new JButton("Log In");
 
@@ -66,6 +68,7 @@ public class Ahomepage extends JFrame {
         JPanel signupPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         signupPanel.add(signupButton);
         getContentPane().add(signupPanel, gbc);
+        signupPanel.setBackground(new Color (238,210,186,255));
 
         gbc.gridy = 1;
 

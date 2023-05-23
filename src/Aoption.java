@@ -13,13 +13,13 @@ public class Aoption extends JFrame implements ActionListener {
     Aoption(){
         setTitle("Admin Options");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 300);
-
+        setSize(800, 600);
         getContentPane().setBackground(new Color(238,210,186,255));
 
         JLabel titleLabel = new JLabel("Admin Functionalities:");
-        titleLabel.setBounds(50, 10, 200, 20);
+        titleLabel.setBounds(200, 10, 400, 40);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.PLAIN, 24));
         add(titleLabel);
 
         // Create buttons
@@ -30,11 +30,11 @@ public class Aoption extends JFrame implements ActionListener {
         deleteStudentButton = new JButton("Delete a Student");
 
         // Set button positions
-        editAccountButton.setBounds(50, 30, 200, 30);
-        addBookButton.setBounds(50, 70, 200, 30);
-        editBookButton.setBounds(50, 110, 200, 30);
-        statisticsButton.setBounds(50, 150, 200, 30);
-        deleteStudentButton.setBounds(50, 190, 200, 30);
+        editAccountButton.setBounds(300, 80, 200, 40);
+        addBookButton.setBounds(300, 140, 200, 40);
+        editBookButton.setBounds(300, 200, 200, 40);
+        statisticsButton.setBounds(300, 260, 200, 40);
+        deleteStudentButton.setBounds(300, 320, 200, 40);
 
 
 

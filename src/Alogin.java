@@ -18,12 +18,11 @@ public class Alogin extends JFrame {
         setSize(900, 800);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(new Color(238,210,186,255));
-
         // Create a panel with GridBagLayout
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Set the spacing between components
+        panel.setBackground(new Color(238,210,186,255));
 
         // Set the preferred sizes and fonts for the labels and text fields
         Dimension labelSize = new Dimension(150, 50);

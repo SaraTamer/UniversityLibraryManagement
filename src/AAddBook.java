@@ -47,6 +47,7 @@ public class AAddBook extends JFrame {
         gbc.anchor = GridBagConstraints.NORTHWEST;
         gbc.insets = new Insets(10, 20, 10, 20);
 
+        contentPanel.setBackground(new Color(238,210,186,255));
         // Add searchLabel
         contentPanel.add(ISBNLabel, gbc);
 
