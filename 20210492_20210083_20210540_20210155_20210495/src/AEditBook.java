@@ -237,6 +237,11 @@ public class AEditBook extends JFrame {
         Book book = new Book();
         String ISBN = searchISBNTextField.getText();
         book.deleteBook(Integer.parseInt(ISBN));
+        JOptionPane.showMessageDialog(this, "Book deleted successfully!"
+                , "Message", JOptionPane.ERROR_MESSAGE);
+        Aoption OptionPage = new Aoption();
+        OptionPage.setVisible(true);
+        dispose();
     }
 
 }

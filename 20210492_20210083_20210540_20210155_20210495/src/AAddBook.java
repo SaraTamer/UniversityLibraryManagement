@@ -2,16 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.sql.SQLException;
-import java.sql.*;
-import java.util.ArrayList;
 
 
 
 public class AAddBook extends JFrame {
     private JLabel ISBNLabel = new JLabel("Book ISBN:");
-//    private JButton searchButton = new JButton("Search");
     private JTextField ISBNTextField = new JTextField();
     private JLabel bookTitleLabel = new JLabel("Book Title:");
     private JTextField bookTitleTextField = new JTextField();
@@ -60,9 +55,6 @@ public class AAddBook extends JFrame {
 
         contentPanel.add(ISBNTextField, gbc);
 
-        // Add searchButton
-//        gbc.gridx = 2;
-//        contentPanel.add(searchButton, gbc);
 
 
         // Add bookTitleLabel
@@ -167,7 +159,6 @@ public class AAddBook extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(contentPanel, BorderLayout.CENTER);
 
-        //getContentPane().setBackground(new Color(238,210,186,255));
 
         // Set icon for the JFrame
         ImageIcon icon = new ImageIcon("logo.png");
@@ -211,9 +202,6 @@ public class AAddBook extends JFrame {
         Aoption OptionPage = new Aoption();
         OptionPage.setVisible(true);
         dispose();
-    }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(AAddBook::new);
     }
 }
 

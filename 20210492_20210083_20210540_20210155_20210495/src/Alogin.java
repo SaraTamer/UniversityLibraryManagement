@@ -103,10 +103,7 @@ public class Alogin extends JFrame {
         JOptionPane.showMessageDialog(this, "Invalid email or password! Please try again", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-}
-/*    public static void main(String[] args) throws SQLException {
-        new Alogin();
-    }*/
+    }
 
 }
 

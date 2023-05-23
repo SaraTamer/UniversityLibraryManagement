@@ -17,7 +17,6 @@ public class Soption extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
         panel.setLayout(null);
 
-        //getContentPane().setBackground(new Color(238, 210, 186, 255));
         panel.setBackground(new Color(238, 210, 186, 255));
 
         JLabel titleLabel = new JLabel("Student Functionalities:");
@@ -84,8 +83,5 @@ public class Soption extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        Soption runProgram = new Soption();
-    }
 
 }

@@ -166,8 +166,5 @@ public class SEditAcc extends JFrame implements ActionListener {
             dispose();
         }
     }
-    public static void main(String[] args) {
-        new SEditAcc();
-    }
 
 }
