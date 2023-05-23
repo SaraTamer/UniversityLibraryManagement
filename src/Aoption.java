@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Aoption extends JFrame implements ActionListener {
     private JButton editAccountButton;
@@ -13,55 +14,44 @@ public class Aoption extends JFrame implements ActionListener {
     Aoption(){
         setTitle("Admin Options");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 300);
-
-        getContentPane().setBackground(new Color(238,210,186,255));
+        setSize(800, 600);
 
         JLabel titleLabel = new JLabel("Admin Functionalities:");
-        titleLabel.setBounds(50, 10, 200, 20);
+        titleLabel.setBounds(200, 10, 400, 40);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.PLAIN, 24));
         add(titleLabel);
 
         // Create buttons
         editAccountButton = new JButton("Edit Account Info");
         addBookButton = new JButton("Add Book");
         editBookButton = new JButton("Edit Book Details");
-        statisticsButton = new JButton("Report");
+        statisticsButton = new JButton("View Books Statistics");
         deleteStudentButton = new JButton("Delete a Student");
 
         // Set button positions
-        editAccountButton.setBounds(50, 30, 200, 30);
-        addBookButton.setBounds(50, 70, 200, 30);
-        editBookButton.setBounds(50, 110, 200, 30);
-        statisticsButton.setBounds(50, 150, 200, 30);
-        deleteStudentButton.setBounds(50, 190, 200, 30);
+        editAccountButton.setBounds(300, 80, 200, 40);
+        addBookButton.setBounds(300, 140, 200, 40);
+        editBookButton.setBounds(300, 200, 200, 40);
+        statisticsButton.setBounds(300, 260, 200, 40);
+        deleteStudentButton.setBounds(300, 320, 200, 40);
 
 
 
-        Color btncolor = new Color(173, 147, 124);
-        addBookButton.setBackground(btncolor);
-        editAccountButton.setBackground(btncolor);
-        editBookButton.setBackground(btncolor);
-        statisticsButton.setBackground(btncolor);
-        deleteStudentButton.setBackground(btncolor);
+        Color babyBlueColor = new Color(137, 207, 240);
+        addBookButton.setBackground(babyBlueColor);
+        editAccountButton.setBackground(babyBlueColor);
+        editBookButton.setBackground(babyBlueColor);
+        statisticsButton.setBackground(babyBlueColor);
+        deleteStudentButton.setBackground(babyBlueColor);
 
-        addBookButton.setBorderPainted(false);
-        addBookButton.setFocusPainted(false);
-        editAccountButton.setBorderPainted(false);
-        editAccountButton.setFocusPainted(false);
-        editBookButton.setBorderPainted(false);
-        editBookButton.setFocusPainted(false);
-        statisticsButton.setBorderPainted(false);
-        statisticsButton.setFocusPainted(false);
-        deleteStudentButton.setBorderPainted(false);
-        deleteStudentButton.setFocusPainted(false);
-        
         // Add buttons to the frame
         add(editAccountButton);
         add(addBookButton);
         add(editBookButton);
         add(statisticsButton);
         add(deleteStudentButton);
+
         // Add action listeners to the buttons
         editAccountButton.addActionListener(this);
         addBookButton.addActionListener(this);
@@ -69,13 +59,8 @@ public class Aoption extends JFrame implements ActionListener {
         statisticsButton.addActionListener(this);
         deleteStudentButton.addActionListener(this);
 
-
-        // Set icon for the JFrame
-        ImageIcon icon = new ImageIcon("logo.png");
-        setIconImage(icon.getImage());
         setLayout(null);
         setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent e) {

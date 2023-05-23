@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class AEditAcc extends JFrame implements ActionListener {
     private JTextField firstName;
@@ -165,14 +166,11 @@ public class AEditAcc extends JFrame implements ActionListener {
                 OptionPage.setVisible(true);
                 dispose();
             }
-        Aoption aoption = new Aoption();
-        aoption.setVisible(true);
-        dispose();
-
         }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(AEditAcc::new);
+    public static void main(String[] args) throws SQLException {
+        AEditAcc b = new AEditAcc();
     }
     }
+
 
 
