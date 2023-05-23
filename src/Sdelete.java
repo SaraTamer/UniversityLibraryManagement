@@ -29,8 +29,15 @@ public class Sdelete extends JFrame implements ActionListener {
         deleteButton.setBounds(50, 70, 100, 25);
         returnButton.setBounds(50, 110, 200, 25);
 
-        deleteButton.setBackground(panel.getBackground());
-        returnButton.setBackground(panel.getBackground());
+
+        Color btncolor = new Color(173, 147, 124);
+        deleteButton.setBackground(btncolor);
+        returnButton.setBackground(btncolor);
+
+        deleteButton.setBorderPainted(false);
+        deleteButton.setFocusPainted(false);
+        returnButton.setBorderPainted(false);
+        returnButton.setFocusPainted(false);
 
         panel.add(idLabel);
         panel.add(id);

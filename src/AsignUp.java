@@ -52,6 +52,8 @@ public class AsignUp extends JFrame {
         Dimension textFieldSize = new Dimension(400, 30);
         Font labelFont = new Font("Arial", Font.BOLD, 20);
 
+        getContentPane().setBackground(new Color(238, 210, 186, 255));
+
         fnameText.setPreferredSize(labelSize);
         fnameText.setFont(labelFont);
         fnameTextField.setPreferredSize(textFieldSize);
