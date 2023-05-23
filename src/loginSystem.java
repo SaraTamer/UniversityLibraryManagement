@@ -6,8 +6,8 @@ import java.sql.*;
 
 public class loginSystem {
 
-    public static Admin admin ;
-    public static Student student ;
+    public static Admin admin = null ;
+    public static Student student = null;
 
     public boolean AisAuthenticated(String email, String password) throws SQLException {
         try {

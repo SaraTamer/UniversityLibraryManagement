@@ -10,6 +10,8 @@ public class Aoption extends JFrame implements ActionListener {
     private JButton editBookButton;
     private JButton deleteStudentButton;
     private JButton statisticsButton;
+    private JButton displayBookButton;
+
 
     Aoption(){
         setTitle("Admin Options");
@@ -29,6 +31,8 @@ public class Aoption extends JFrame implements ActionListener {
         editBookButton = new JButton("Edit Book Details");
         statisticsButton = new JButton("Report");
         deleteStudentButton = new JButton("Delete a Student");
+        displayBookButton = new JButton("Browsing Books");
+
 
         // Set button positions
         editAccountButton.setBounds(300, 80, 200, 40);
@@ -36,7 +40,7 @@ public class Aoption extends JFrame implements ActionListener {
         editBookButton.setBounds(300, 200, 200, 40);
         statisticsButton.setBounds(300, 260, 200, 40);
         deleteStudentButton.setBounds(300, 320, 200, 40);
-
+        displayBookButton.setBounds(300, 380, 200, 40);
 
 
         Color btncolor = new Color(173, 147, 124);
@@ -45,6 +49,7 @@ public class Aoption extends JFrame implements ActionListener {
         editBookButton.setBackground(btncolor);
         statisticsButton.setBackground(btncolor);
         deleteStudentButton.setBackground(btncolor);
+        displayBookButton.setBackground(btncolor);
 
         addBookButton.setBorderPainted(false);
         addBookButton.setFocusPainted(false);
@@ -56,6 +61,8 @@ public class Aoption extends JFrame implements ActionListener {
         statisticsButton.setFocusPainted(false);
         deleteStudentButton.setBorderPainted(false);
         deleteStudentButton.setFocusPainted(false);
+        displayBookButton.setBorderPainted(false);
+        displayBookButton.setFocusPainted(false);
 
         // Add buttons to the frame
         add(editAccountButton);
@@ -63,6 +70,7 @@ public class Aoption extends JFrame implements ActionListener {
         add(editBookButton);
         add(statisticsButton);
         add(deleteStudentButton);
+        add(displayBookButton);
 
         // Add action listeners to the buttons
         editAccountButton.addActionListener(this);
@@ -70,6 +78,7 @@ public class Aoption extends JFrame implements ActionListener {
         editBookButton.addActionListener(this);
         statisticsButton.addActionListener(this);
         deleteStudentButton.addActionListener(this);
+        displayBookButton.addActionListener(this);
 
         // Set icon for the JFrame
         ImageIcon icon = new ImageIcon("logo.png");
@@ -101,9 +110,13 @@ public class Aoption extends JFrame implements ActionListener {
             delete.setVisible(true);
             dispose();
         }
+        else if (e.getSource() == displayBookButton) {
+            browsingBooks browsePage = new browsingBooks();
+            browsePage.setVisible(true);
+            dispose();
+        }
     }
     public static void main(String[] args) {
         new Aoption();
     }
-
 }

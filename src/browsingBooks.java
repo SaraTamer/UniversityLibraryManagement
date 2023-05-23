@@ -127,10 +127,15 @@ public class browsingBooks extends JFrame {
         returnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Handle the action when returnButton is clicked
-                Soption OptionPage = new Soption();
-                OptionPage.setVisible(true);
-                dispose();
+                if (loginSystem.student == null){
+                    Aoption OptionPage = new Aoption();
+                    OptionPage.setVisible(true);
+                    dispose();
+                } else if(loginSystem.admin == null){
+                    Soption OptionPage = new Soption();
+                    OptionPage.setVisible(true);
+                    dispose();
+                }
             }
         });
 
