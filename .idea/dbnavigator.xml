@@ -12,14 +12,13 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="4927c7ae-f023-4346-b47b-bd26be5b6ce3">
-      <console name="Connection 1" type="STANDARD" schema="finallibrary" session="Main"><![CDATA[select * from admin, account where admin.acc_id = account.Acc_id
-
-select * from student, account where student.acc_id = account.Acc_id
+    <connection id="6a2c3a25-8686-4dfc-9d61-80afd4f066ac">
+      <console name="Connection" type="STANDARD" schema="libraryscema" session="Main"><![CDATA[select * from student as s , account as a where s.Acc_ID = a.Acc_id;
+select * from admin as s , account as a where s.Acc_ID = a.Acc_id;
 
 select * from book
 
-select * from Author]]></console>
+select * from author]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -45,9 +44,9 @@ select * from Author]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="4927c7ae-f023-4346-b47b-bd26be5b6ce3" active="true" signed="true">
+      <connection id="6a2c3a25-8686-4dfc-9d61-80afd4f066ac" active="true" signed="true">
         <database>
-          <name value="Connection 1" />
+          <name value="Connection" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />

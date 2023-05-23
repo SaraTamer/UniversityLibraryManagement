@@ -155,7 +155,7 @@ public class Statistics {
         return studentCountMap;
     }
     public static Map<String, Integer> countBooksByPublishingYear() {
-        String query = "SELECT PublisingYear, COUNT(*) AS BookCount FROM Book GROUP BY PublisingYear";
+        String query = "SELECT PublisingYear, COUNT(*) AS BookCount FROM Book GROUP BY PublisingYear Order by PublisingYear";
         Map<String, Integer> bookCountMap = new HashMap<>();
         ResultSet resultSet = null;
         Connection connection = null;
